@@ -185,11 +185,7 @@ fieldset {
 	font-size: 18px;
 }
 
-.exp {
-	display: none;
-}
-
-.post {
+.exp, .post {
 	display: none;
 }
 
@@ -239,14 +235,6 @@ span {
 	margin-left: 0;
 }
 
-.valid {
-	border-color: blue;
-}
-
-.invalid {
-	border-color: red;
-}
-
 .shadow {
 	width: 100%;
 	display: none;
@@ -272,6 +260,7 @@ span {
 	border-radius: 50%;
 }
 
+
 /*Footer*/
 .footer {
     background-image: linear-gradient(to bottom, white, #dddd00 50%, green);
@@ -282,7 +271,8 @@ span {
 }
 
 .social {
-
+  position: relative;
+  top: 30%;
 }
 
 .social ul {
@@ -293,8 +283,11 @@ span {
 .social ul li {
     width: 50px;
 }
+
 .copyright {
-    
+  	position: relative;
+  	top: 30%;
+  	font-size: 20px;   
 }
 
 @media screen and (max-width: 1024px) {
