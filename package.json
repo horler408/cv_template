@@ -1,0 +1,19 @@
+{
+  "name": "first_git_site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horler408/cv_template.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/horler408/cv_template/issues"
+  },
+  "homepage": "https://github.com/horler408/cv_template#readme"
+}
