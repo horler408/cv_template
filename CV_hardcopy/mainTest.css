@@ -1,0 +1,56 @@
+* {
+	margin: 0 auto;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0 auto;
+
+}
+
+header {
+	text-align: center;
+}
+
+h2, h3, h4 {
+	background: rgba(0,0,0,0.8);
+	color: #fff;
+	height: 5vh;
+	padding: 5px;
+}
+
+main {
+	position: relative;
+	top: 170px;
+	left: 150px;
+	width: 70%;
+	margin: 10px 20px;
+}
+
+main div {
+	margin-bottom: 50px;
+}
+
+p, li {
+	margin: 10px;
+}
+
+.container {
+	position: relative;
+	width: 100%;
+}
+
+.about {
+	position: fixed;
+	z-index: 2;
+	width: 100%;
+	padding: 20px;
+	margin-bottom: 20px;
+	margin-top: -10px;
+	background-color: #FAFAFA;
+	box-shadow: 0px 2px 6px rgba(0,0,0,0.5);
+}
+
+.fa {
+	margin-right: 5px;
+}

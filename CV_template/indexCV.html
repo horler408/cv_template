@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>CV Template</title>
+	<link rel="stylesheet" type="text/css" href="../css/stylesCV.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../images/logo.png">
+	
+</head>
+<body>
+<div>
+	<button class="print">Print</button>
+</div>
+
+	<header class="main-header">
+		<div class="header-wrapper">
+			<div class="logo-img"><img src="../images/logo.jpg" width="150px" height="200px"></div>
+			<h1 class="special">HorlerTech Solution</h1>
+			<nav class="logo-nav">
+				<ul>
+					<li id="home-bar"><a href="../index.html" target="_blank">Home</a></li>
+					<li><a href="#">|</a></li>
+					<li class="active"><a href="#">CV Template</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="../jQueryVersion/indexQueryCV.html" target="_blank">Query CV</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="../CV_hardcopy/sampleCV.html" target="_blank">Sample CV</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="../pages/blog.html" target="_blank">Blog</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="../pages/contact.html" target="_blank">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="search">
+				<label for="search">Search</label>
+				<input type="Search" name="nav-search" id="search" placeholder="Search...">
+			</div>
+		</div>
+	</header>
+
+<main>
+	<div id="time-stamp">
+	<h2>Current Time is: &nbsp <span id="time"></span></h2></div>
+
+	<form class="container">
+		<fieldset>
+			<div class="info" id="error-message">All fields with * are required</div>
+			<h2>Personal Information</h2>
+		<div class="wrapper">
+			<div class="item">
+				<label for="first-name">First Name<span>*</span></label>
+				<input type="text" name="fName" id="first-name" placeholder="e.g Adisa" required="true">
+			</div>
+			<div class="item">
+				<label for="middle-name">Middle Name<span>*</span></label>
+				<input type="text" name="mName" id="middle-name" placeholder="e.g Muhammad" required>
+			</div>
+			<div class="item">
+				<label for="last-name">Last Name<span>*</span></label>
+				<input type="text" name="lName" id="last-name" placeholder="e.g Buhari" required>
+			</div>
+			<div class="item">
+				<label for="contact-address">Contact Address</label>
+				<input type="text" name="address" id="contact-address" placeholder="e.g 5, Mafoluku street, Surulere, Lagos state" required>
+			</div>
+			<div class="item">
+				<label for="phone-number">Phone Number<span>*</span></label>
+				<input type="tel" name="phoneNo" id="phone-number" required>
+			</div>
+			<div class="item">
+				<label for="email-address">Email<span>*</span></label>
+				<input type="Email" name="emailAdd" id="email-address" multiple required>
+			</div>
+			<div class="item">
+				<label for=career-objectives>Career Objectives<span>*</span></label>
+				<textarea id="career-objectives" cols="50" rows="" required></textarea> 
+			</div>
+			<div class="item">
+				<label for="dob">Date of birth<span>*</span></label>
+				<input type="date" name="" id="dob" required>
+			</div>
+			<div class="item">
+				<label for="pob">Place of birth<span>*</span></label>
+				<input type="text" name="" id="pob" required>
+			</div>
+			<div class="item">
+				<label for="gender">Gender<span>*</span></label>
+				<select id="gender" required>
+					<option value="none">--Select--</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
+				</select>
+			</div>
+			<div class="item">
+				<label for="status">Marital Status<span>*</span></label>
+				<select id="status" required>
+					<option value="none">-Choose--</option>
+					<option value="Single">Single</option>
+					<option value="Married">Married</option>
+					<option value="Divorced">Divorced</option>
+				</select>
+			</div>
+			<div class="item">
+				<label for="country">Nationalty<span>*</span></label>
+				<select type="text" id="country" name="country" required></select>
+			</div>
+			<div class="item">
+				<label for="faith">Religion<span>*</span></label>
+				<input type="text" id="faith" required>
+			</div>
+			<div class="item">
+				<label for="state">State of origin<span>*</span></label>
+				<select type="text" name="state" id="state" required></select>
+			</div>
+			<div class="item">
+				<label for="passport">Upload Passport</label>
+				<input type="file" name="" id="passport">
+			</div>
+			<div class="item">
+				<label for="local">Local Government<span>*</span></label>
+				<input type="text" name="" id="local" required>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<h2>Education History</h2>
+		<div class="wrapper">
+			<div class="item">
+					<label>Primary School Attended<span>*</span></label>
+					<input type="text" id="primary" required>
+			</div>
+
+			<div class="item">
+				<label for="primary-cert">Certificate Obtained<span>*</span></label>
+				<select id="primary-cert" required>
+					<option>None</option>
+					<option>Senior School Certificate Examination</option>
+					<option>Interim Joint Matriculation Board</option>
+					<option>School leaving Certificate</option>
+				</select>
+			</div>
+			<div class="item">
+					<label for="pri-start-date">Start date<span>*</span></label>
+					<input type="date" id="pri-start-date" required>
+			</div>
+			<div class="item">
+					<label for="pri-end-date">End date<span>*</span></label>
+					<input type="date" id="pri-end-date" required>
+			</div>
+			
+			<div class="item">
+					<label>Secondary School Attended<span>*</span></label>
+					<input type="text" id="secondary" required>
+			</div>
+			<div class="item">
+				<label for="secondary-cert">Certificate Obtained<span>*</span></label>
+				<select id="secondary-cert" required>
+					<option>None</option>
+					<option>Senior School Certificate Examination</option>
+					<option>Interim Joint Matriculation Board</option>
+					<option>School leaving Certificate</option>
+				</select>
+			</div>
+			<div class="item">
+					<label for="sec-start-date">Start date<span>*</span></label>
+					<input type="date" id="sec-start-date" required>
+			</div>
+			<div class="item">
+					<label for="sec-end-date">End date<span>*</span></label>
+					<input type="date" id="sec-end-date" required>
+			</div>
+			<div class="item">
+					<label for="tertiary1">University/Polytechnic Attended<span>*</span></label>
+					<input type="text" id="tertiary1" required>
+			</div>
+			<div class="item">
+					<label for="course1">Course of Study<span>*</span></label>
+					<input type="text" id="course1" required>
+			</div>
+			<div class="item">
+				<label for="tert1-cert">Certificate Obtained<span>*</span></label>
+				<select id="tert1-cert" required>
+					<option>None</option>
+					<option>Msc</option>
+					<option>Bsc</option>
+					<option>B.eng</option>
+					<option>HND</option>
+					<option>OND</option>
+				</select>
+			</div>
+			<div class="item">
+				<label for="tert1-grade">Grade Obtained<span>*</span></label>
+				<select id="tert1-grade" required>
+					<option>None</option>
+					<option>First Class</option>
+					<option>Second Class(upper division)</option>
+					<option>Second Class(lower division)</option>
+					<option>Distinction</option>
+					<option>Upper Credit</option>
+					<option>Lower Credit</option>
+					<option>Pass</option>
+				</select>
+			</div>
+			<div class="item">
+					<label for="t1-start-date">Start date<span>*</span></label>
+					<input type="date" id="t1-start-date" required>
+			</div>
+			<div class="item">
+					<label for="t1-end-date">End date<span>*</span></label>
+					<input type="date" id="t1-end-date" required>
+			</div>
+			<div class="edit">
+				<input type="button" value="Add+" name="addBtn" id="add">
+			</div>
+		</div>
+		<div class="post wrapper">
+			<div class="item">
+					<label for="tertiary2">Other Certificate Obtained<span>*</span></label>
+					<input type="text" id="tertiary2">
+			</div>
+			<div class="item">
+					<label for="course2">Course of Study<span>*</span></label>
+					<input type="text" id="course2">
+			</div>
+			<div class="item">
+				<label for="tert2-cert">Certificate Obtained<span>*</span></label>
+				<select id="tert2-cert">
+					<option>None</option>
+					<option>Phd</option>
+					<option>Msc</option>
+					<option>Bsc</option>
+					<option>B.eng</option>
+					<option>HND</option>
+					<option>OND</option>
+				</select>
+			</div>
+			<div class="item">
+				<label for="tert2-grade">Grade Obtained<span>*</span></label>
+				<select id="tert2-grade">
+					<option value="">None</option>
+					<option value="First Class">First Class</option>
+					<option value="Second Class(Upper)">Second Class(upper division)</option>
+					<option value="Second Class(lower)">Second Class(lower division)</option>
+					<option value="distinction">Distinction</option>
+					<option value="upper credit">Upper Credit</option>
+					<option value="lower credit">Lower Credit</option>
+					<option>Pass</option>
+				</select>
+			</div>
+			<div class="item">
+					<label for="t2-start-date">Start date<span>*</span></label>
+					<input type="date" id="t2-start-date">
+			</div>
+			<div class="item">
+					<label for="t2-end-date">End date<span>*</span></label>
+					<input type="date" id="t2-end-date">
+			</div>
+		</div>
+	</fieldset>
+
+		<fieldset>
+		<h2>Employment History</h2>
+		<div class="wrapper" id="work">
+			<div class="item">
+				<label for="work-1">Name and address of Organisation<span>*</span></label>
+				<input type="text" id="work-1" required>
+			</div>
+			<div class="item">
+				<label for="pos-1">Position Held<span>*</span></label>
+				<input type="text" id="pos-1" required>
+			</div>
+			<div class="item">
+				<label for="work-start-1">Start date<span>*</span></label>
+				<input type="date" id="work-start-1" required>
+			</div>
+			<div class="item">
+				<label for="work-end-1">End date<span>*</span></label>
+				<input type="date" id="work-end-1" required>
+			</div>
+		</div>
+
+		<div class="wrapper">
+			<div class="item">
+				<label for="work-2">Name and address of Organisation<span>*</span></label>
+				<input type="text" id="work-2" required>
+			</div>
+			<div class="item">
+				<label for="pos-2">Position Held<span>*</span></label>
+				<input type="text" id="pos-2" required>
+			</div>
+			<div class="item">
+				<label for="work-start-2">Start date<span>*</span></label>
+				<input type="date" id="work-start-2" required>
+			</div>
+			<div class="item">
+				<label for="work-end-2">End date<span>*</span></label>
+				<input type="date" id="work-end-2" required>
+			</div>
+		</div>
+
+		<div class="wrapper">
+			<div class="item">
+				<label for="work-3">Name and address of Organisation<span>*</span></label>
+				<input type="text" id="work-3">
+			</div>
+			<div class="item extra" >
+				<label for="pos-3">Position Held<span>*</span></label>
+				<input type="text" id="pos-3">
+			</div>
+			<div class="item">
+				<label for="work-start-3">Start date<span>*</span></label>
+				<input type="date" id="work-start-3">
+			</div>
+			<div class="item">
+				<label for="work-end-3">End date<span>*</span></label>
+				<input type="date" id="work-end-3">
+			</div>
+		</div>
+
+		<div class="wrapper exp">
+			<div class="item">
+				<label for="work-4">Name and address of Organisation<span>*</span></label>
+				<input type="text" id="work-4">
+			</div>
+			<div class="item extra">
+				<label for="pos-4">Position Held<span>*</span></label>
+				<input type="text" id="pos-4">
+			</div>
+			<div class="item">
+				<label for="work-start-4">Start date<span>*</span></label>
+				<input type="date" id="work-start-4">
+			</div>
+			<div class="item">
+				<label for="work-end-4">End date<span>*</span></label>
+				<input type="date" id="work-end-4">
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<h2>Skills and Certification</h2>
+		<div class="wrapper">
+			<div class="item">
+				<label>Technical Skills<span>*</span></label>
+				<select multiple id="technical-skills" required>
+					<option value="">--Select--</option>
+					<option value="Windows Appreciation">Window Appreciation</option>
+					<option value="Desktop Publishing">Desktop Publishing</option>
+					<option value="ms-offices">Ms Offices</option>
+					<option value="Photoshop">Photoshop Design</option>
+					<option value="Adobe Design">Adope illustrator</option>
+					<option value="Web design">Website Design</option>
+					<option value="Fontend">Front-end Development</option>
+					<option value="Backend">Back-end Development</option>
+					<option value="Sql database">Database Management</option>
+					<option value="Android development">Mobile App</option>
+				</select>
+			</div>
+			<div class="item">
+				<label>Certification<span>*</span></label>
+				<select multiple id="skills-certification" required>
+					<option value="">--Select--</option>
+					<option value="CCNA">CCNA</option>
+					<option value="CCNP">CCNP</option>
+					<option value="Comptia A+">Comptia A+</option>
+					<option value="COMPTIA N+">Comptia N+</option>
+					<option value="Oracle database Administrator">Oracle Database Administrator</option>
+					<option value="Linux Certification">Linus Plus</option>
+				</select>
+			</div>
+			<div class="item">
+				<label for="other-skills" class="other">Other skills not specified</label>
+				<input type="text" id="other-skills" placeholder="Other skills">
+			</div>
+			<div class="item">
+				<label for="other-cert" class="other">Other Certification</label>
+				<input type="text" id="other-cert" placeholder="Other certifications">
+			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+		<h2>hobbies and Language Spoken</h2>
+		<div class="wrapper">
+				<div>
+					<input type="checkbox" name="sports" value="Sports" id="sports" class="check">
+					<label for="sports" class="check-label">Sports</label>
+				</div>
+				<div>
+					<input type="checkbox" name="reading" value="Reading" id="reading" class="check">
+					<label for="reading" class="check-label">Reading</label>
+				</div>
+				<div>
+					<input type="checkbox" name="swimming" value="Swimming" id="swimming" class="check">
+					<label for="swimming" class="check-label">Swimming</label>
+				</div>
+				<div>
+					<input type="checkbox" name="games" value="Video Games" id="games" class="check">
+					<label for="games" class="check-label">Video Games</label>
+				</div>
+				<div>
+					<input type="checkbox" name="traveling" value="Traveling" id="traveling" class="check">
+					<label for="traveling" class="check-label">Travelling</label>
+				</div>
+				<div>
+					<input type="checkbox" name="meeting" value="Making Friends" id="meeting" class="check">
+					<label for="meeting" class="check-label">Making Friends</label>
+				</div>
+			</div>
+			<div class="wrapper">
+				<div>
+					<input type="checkbox" name="yoruba" value="Yoruba" id="yoruba" class="check">
+					<label for="yoruba" class="check-label">Yoruba</label>
+				</div>
+				<div>
+					<input type="checkbox" name="hausa" value="Hausa" id="hausa" class="check">
+					<label for="hausa" class="check-label">Hausa</label>
+				</div>
+				<div>
+					<input type="checkbox" name="igbo" value="Igbo" id="igbo" class="check">
+					<label for="igbo" class="check-label">Igbo</label>
+				</div>
+				<div>
+					<input type="checkbox" name="english" value="English" id="english" class="check">
+					<label for="english" class="check-label">English</label>
+				</div>
+				<div>
+					<input type="checkbox" name="french" value="French" id="french" class="check">
+					<label for="french" class="check-label">French</label>
+				</div>
+				<div>
+					<input type="checkbox" name="german" value="German" id="german" class="check">
+					<label for="german" class="check-label">German</label>
+				</div>
+				<div>
+					<input type="checkbox" name="portuguese" value="Portuguese" id="portuguese" class="check">
+					<label for="portuguese" class="check-label">Portuguese</label>
+				</div>
+				<div>
+					<input type="checkbox" name="spanish" value="Spanish" id="spanish" class="check">
+					<label for="spanish" class="check-label">Spanish</label>
+				</div>
+			</div>
+	</fieldset>
+	<fieldset>
+		<h2>Referees</h2>
+		<div class="wrapper">
+			<div class="item">
+				<label for="referee-1">Name of Referee<span>*</span></label>
+				<input type="text" id="referee-1" required>
+			</div>
+			<div class="item">
+				<label for="referee-address-1">Address of Referee<span>*</span></label>
+				<input type="text" id="referee-address-1" required>
+			</div>
+			<div class="item">
+				<label for="referee-phone-1">Phone Number<span>*</span></label>
+				<input type="tel" id="referee-phone-1" required>
+			</div>
+			<div class="item">
+				<label for="referee-email-1">Email Address<span>*</span></label>
+				<input type="email" id="referee-email-1" required="">
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="item">
+				<label for="referee-2">Name of Referee<span>*</span></label>
+				<input type="text" id="referee-2" required>
+			</div>
+			<div class="item">
+				<label for="referee-address-2">Address of Referee<span>*</span></label>
+				<input type="text" id="referee-address-2" required>
+			</div>
+			<div class="item">
+				<label for="referee-phone-2">Phone Number<span>*</span></label>
+				<input type="tel" id="referee-phone-2" required>
+			</div>
+			<div class="item">
+				<label for="referee-email-2">Email Address<span>*</span></label>
+				<input type="email" id="referee-email-2" required>
+			</div>
+		</div>
+		<div class="wrapper">
+			<div class="item">
+				<label for="referee-3">Name of Referee<span>*</span></label>
+				<input type="text" id="referee-3" required>
+			</div>
+			<div class="item">
+				<label for="referee-address-3">Address of Referee<span>*</span></label>
+				<input type="text" id="referee-address-3" required>
+			</div>
+			<div class="item">
+				<label for="referee-phone-3">Phone Number<span>*</span></label>
+				<input type="tel" id="referee-phone-3" required>
+			</div>
+			<div class="item">
+				<label for="referee-email-3">Email Address<span>*</span></label>
+				<input type="email" id="referee-email-3" required>
+			</div>
+		</div>
+	</fieldset>
+
+		<div class="wrapper">	
+			<div class="item">
+				<input type="submit" id="submit-button" value="Submit & View" class="decision">
+			</div>
+			<div class="item">
+				<input type="reset" id="reset-button" value="Reset" class="decision">
+			</div>
+		</div>
+
+	</form>
+</main>
+
+
+<!--UI Display starts Here-->
+<div class="display-container">
+		<header class="shadow">
+			<img src="" id="image">
+			<h1 class="title"></h1>
+			<p class="personal-address add"></p>
+			<p class="personal-phone add"></p>
+			<p class="personal-email add"></p>
+		</header>
+		<main>
+			<h2 class="sub-heading"></h2>
+			<p id="objectives"></p>
+
+			<div class="personal-info">
+				<h2 class="info-heading"></h2>
+				<p id="info-item1"></p>
+				<p id="info-item2"></p>
+				<p id="info-item3"></p>
+				<p id="info-item4"></p>
+				<p id="info-item5"></p>
+				<p id="info-item6"></p>
+				<p id="info-item7"></p>
+				<p id="info-item8"></p>
+			</div>
+
+<!--Institution Attended with dates-->
+			<div>
+				<h2 class="sch-attended"></h2>
+				<div class="post">
+					<h3 id="tertiary2-head" class="sch-head"></h3>
+					<p id="tert2-sch"></p>
+
+				</div>
+				<div>
+				<h2 class="sch-attended"></h2>
+				<div>
+					<h3 id="tertiary1-head" class="sch-head"></h3>
+					<p id="tert1-sch"></p>
+				
+				</div>
+				<div>
+					<h2 id="secondary-head" class="head"></h2>
+					<p id="sec-sch"></p>
+					
+				</div>
+				<div>
+					<h2 id="primary-head" class="sch-head"></h2>
+					<p id="pri-sch"></p>
+					
+				</div>
+			</div>
+
+<!--Qualification Obtained with dates-->
+			<div>
+				<h2 id="qualification" class="heading"></h2>
+				<div>
+					<p id="tert2-qual" class="post"></p>
+				</div>
+				<div>
+					<p id="tert1-qual"></p>
+				</div>
+				<div>
+					<p id="sec-qual"></p>
+				</div>
+				<div>
+					<p id="pri-qual"></p>
+				</div>
+			</div>
+
+<!--Working Experience with dates-->
+			<div>
+				<h2 id="experience-title" class="heading"></h2>
+				<div id="experience-1" class="head">
+					<p id="exp-1"></p>
+					<p id="role-1"></p>
+					<p id="exp-date-1"></p>	
+				</div>
+				<div id="experience-2" class="head">
+					<p id="exp-2"></p>
+					<p id="role-2"></p>
+					<p id="exp-date-2"></p>	
+				</div>
+				<div id="experience-3" class="head">
+					<p id="exp-3"></p>
+					<p id="role-3"></p>
+					<p id="exp-date-3"></p>	
+				</div>
+				<div id="experience-4" class="head">
+					<p id="exp-4"></p>
+					<p id="role-4"></p>
+					<p id="exp-date-4"></p>	
+				</div>
+			</div>
+
+<!--Skills and Certification-->
+			<div>
+				<h2 id="skills"></h2>
+				<p id="skill-item"></p>
+			</div>
+			<div>
+				<h2 id="cert"></h2>
+				<p id="cert-item"></p>
+			</div>
+
+<!--Hobbies and Language-->
+			<div id="hobbies">
+				<h2 id="hobby-head"></h2>
+				<p id="hobby-sport"></p>
+				<p id="hobby-read"></p>
+				<p id="hobby-swim"></p>
+				<p id="hobby-travel"></p>
+				<p id="hobby-games"></p>
+				<p id="hobby-friend"></p>
+			</div>
+			<div id="language">
+				<h2 id="lang-head"></h2>
+				<p id="lang-yoruba"></p>
+				<p id="lang-hausa"></p>
+				<p id="lang-igbo"></p>
+				<p id="lang-english"></p>
+				<p id="lang-french"></p>
+				<p id="lang-spanish"></p>
+				<p id="lang-german"></p>
+				<p id="lang-portugal"></p>
+			</div>
+
+			<div id="referees">
+				<h2 id="referee-head"></h2>
+				<div id="referee-1">
+					<p id="referee-1-name" class="referee"></p>
+					<p id="referee-1-add"></p>
+					<p id="referee-1-phone"></p>
+					<p id="referee-1-email"></p>
+				</div>
+				<div id="referee-2">
+					<p id="referee-2-name" class="referee"></p>
+					<p id="referee-2-add"></p>
+					<p id="referee-2-phone"></p>
+					<p id="referee-2-email"></p>
+				</div>
+				<div id="referee-3">
+					<p id="referee-3-name" class="referee"></p>
+					<p id="referee-3-add"></p>
+					<p id="referee-3-phone"></p>
+					<p id="referee-3-email"></p>
+				</div>
+			</div>
+		</main>
+<footer>
+		<div class="footer">
+			<div class="social">
+				<ul>
+					<li><a href="https://www.twitter.com/Horler408" target="_blank"><img src="../images/twitter.png" title="twitter"></a></li>
+					<li><a href="https://www.facebook.com/nlongr" target="_blank"><img src="../images/facebook.png" title="facebook"></a></li>
+					<li><a href="https://linkedin.com/Horler408" target="_blank"><img src="../images/linked.png" title="linkedin"></a></li>
+					<li><a href="https://www.instagram.com" target="_blank"><img src="../images/instagram.png" title="instagram"></a></li>
+					<li><a href="https://www.github.com/Horler408" target="_blank"><img src="../images/git.png" title="github"></a></li>
+					<li><a href="https://www.skype.com/Horler408" target="_blank"><img src="../images/skype.png" title="skype"></a></li>
+				</ul>
+			</div>
+			<div class="special copyright">
+				&copy;copyright HorlerTech 2020
+			</div>
+		</div>
+<div>
+	<button class="print">Print</button>
+</div>
+	</div>
+
+<script type="text/javascript" src ="./country/countries.js"></script>
+
+<script type="text/javascript" src="js/currentTime.js"></script>
+
+<script type="text/javascript" src="js/script.js"></script>
+
+</body>
+</html>

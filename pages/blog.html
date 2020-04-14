@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog Page</title>
+	<link rel="stylesheet" type="text/css" href="../css/styles.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../images/logo.png">
+	
+</head>
+<body>
+	<header class="main-header">
+		<div class="header-wrapper">
+			<div class="logo-img"><img src="../images/logo.jpg" width="150px" height="200px"></div>
+			<h1 class="special">HorlerTech Solution</h1>
+			<nav class="logo-nav">
+				<ul>
+					<li class="active" id="home-bar"><a href="../index.html" target="_blank">Home</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="../CV_template/indexCV.html" target="_blank">CV Template</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="../jQueryVersion/indexQueryCV.html" target="_blank">Query CV</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="../CV_hardcopy/sampleCV.html" target="_blank">Sample CV</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="#">Blog</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="./contact.html" target="_blank">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="search">
+				<label for="search">Search</label>
+				<input type="Search" name="nav-search" id="search" placeholder="Search...">
+			</div>
+		</div>
+	</header>
+<div>
+	<main>
+	<div class="section">
+	<h1 id="main-heading">Blog Content</h1>
+	<article class="article" id="art-001">
+		<h2>Lorem Ipsum</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada, metus ut mollis volutpat, felis est rhoncus turpis, in blandit est risus malesuada dui. Phasellus tempus elit at purus vestibulum suscipit. Donec quis est nec dui pretium venenatis sit amet eu nulla. Donec finibus, ipsum non semper dignissim, massa magna sagittis est, vitae vehicula nunc magna vitae diam. Integer ultrices mauris aliquet arcu tempor, at mattis justo sagittis. </p>
+			<center><a href="">Read More...</a></center></p>
+	</article>
+	<article class="article" id="art-002">
+		<h2>Lorem Ipsum</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada, metus ut mollis volutpat, felis est rhoncus turpis, in blandit est risus malesuada dui. Phasellus tempus elit at purus vestibulum suscipit. Donec quis est nec dui pretium venenatis sit amet eu nulla. Donec finibus, ipsum non semper dignissim, massa magna sagittis est, vitae vehicula nunc magna vitae diam. Integer ultrices mauris aliquet arcu tempor, at mattis justo sagittis. </p>
+			<center><a href="">Read More...</a></center></p>
+	</article>
+	</div>
+<!--Input Form-->
+	<form class="form-container">
+		<h1>Write a Post</h1>
+		<div class="input">
+			<label for="title-content">Title</label>
+			<input type="text" name="article" id="title-content" required>
+		</div>
+		<div class="input">
+			<label for="article-content">Content</label>
+			<textarea rows="10" cols="50" id="article-content"></textarea>
+		</div>
+		<div class="action-button">
+			<button id="post-button">Post Article</button>
+			<button id="read-button">Read Article</button>
+		</div>
+	</form>
+	</main>
+</div>
+<footer>
+		<div class="footer">
+			<div class="social">
+				<ul>
+					<li><a href="https://www.twitter.com/Horler408" target="_blank"><img src="../images/twitter.png" title="twitter"></a></li>
+					<li><a href="https://www.facebook.com/nlongr" target="_blank"><img src="../images/facebook.png" title="facebook"></a></li>
+					<li><a href="https://linkedin.com/Horler408" target="_blank"><img src="../images/linked.png" title="linkedin"></a></li>
+					<li><a href="https://www.instagram.com" target="_blank"><img src="../images/instagram.png" title="instagram"></a></li>
+					<li><a href="https://www.github.com/Horler408" target="_blank"><img src="../images/git.png" title="github"></a></li>
+					<li><a href="https://www.skype.com/Horler408" target="_blank"><img src="../images/skype.png" title="skype"></a></li>
+				</ul>
+			</div>
+			<div class="special copyright">
+				&copy;copyright HorlerTech 2020
+			</div>
+		</div>
+	</footer>
+</div>
+<script type="text/javascript">
+	const form = document.querySelector('.form-container');
+	const topic = document.getElementById('title-content');
+	const content = document.getElementById('article-content');
+	const addPost = document.getElementById('post-button');
+	const readPost = document.getElementById('read-button');
+	var sectionArticle = document.querySelector('.section');
+
+
+	addPost.addEventListener('click', (e)=> {
+		e.preventDefault();
+		if (topic.value === '' || content.value === '') {
+			alert('You must fill the content and title of your article');
+			window.location.href = "blog.html";
+		}
+		else {
+			let newArticle = document.createElement('article');
+			let newHeading = document.createElement('h3');
+			let newPara = document.createElement('p');
+
+			newHeading.textContent = topic.value;
+			newPara.textContent = content.value;
+
+			newArticle.appendChild(newHeading);
+			newArticle.appendChild(newPara);
+			sectionArticle.appendChild(newArticle);
+
+			newArticle.classList.add('article');	
+			newHeading.classList.add('title');
+			form.reset();
+		}
+	});
+
+	readPost.addEventListener('click',(e)=> {
+		e.preventDefault();
+		form.style.display = 'none';
+		sectionArticle.style.display = 'block';
+	});
+
+/*removePost.addEventListener('click', () => {
+	articleCount = sectionArticle.childElementCount;
+
+	if(articleCount > 1) {
+		sectionArticle.removeChild(sectionArticle.children[articleCount - 1]);
+	}
+});
+*/
+	function createArticle() {
+	let newArticle = document.createElement('article');
+	let newHeading = document.createElement('h3');
+	let newPara = document.createElement('p');
+
+	newHeading.textContent = topic.value;
+	newPara.textContent = content.value;
+
+	//"In sed porttitor lectus. Suspendisse dignissim dolor id lectus pellentesque, eu bibendum lectus malesuada. Phasellus volutpat sollicitudin suscipit. Donec id libero nisl. Praesent gravida purus vel euismod facilisis. Maecenas sit amet velit non lacus aliquam dictum vitae eu augue. Donec euismod enim elementum elit laoreet sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
+
+	newArticle.appendChild(newHeading);
+	newArticle.appendChild(newPara);
+	sectionArticle.appendChild(newPost);
+
+	newArticle.classList.add('article');
+
+	return newArticle;
+}
+	</script>
+</body>
+</html>

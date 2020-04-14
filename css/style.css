@@ -1,0 +1,275 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+  background: url(../images/background_img.jpg) no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
+  font: .9em/1.2 Arial, Helvetica, sans-serif
+}
+
+/*Header*/
+.special {
+    padding: 10px;
+    color: #fff;
+    text-shadow: -1px -1px 1px #aaa,
+    0px 4px 1px rgba(0,0,0,0.5),
+    4px 4px 5px rgba(0,0,0,0.7),
+    0px 0px 7px rgba(0,0,0,0.4);
+}
+
+.header-wrapper {
+    border: 1px solid lightgreen;
+    background-color: rgb(79,185,227);
+    padding: 10px;
+    color: #fff; 
+    display: flow-root;
+    background-image: linear-gradient(to bottom, green, #dddd00 50%, white);
+}
+
+.search {
+    float: right;
+    margin-right: 10px;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bolder;
+}
+
+input[type=search] {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: 1px solid grey;
+    padding: 5px;
+    outline: none;
+    border-radius: 10px;
+}
+
+.logo-img img {
+    border-radius: 50%;
+    float: left;
+    max-width: 100%;
+    height: auto;
+    margin: 15px;
+}
+
+.logo-nav {
+    display: flex;
+    text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.logo-nav ul {
+  padding: 0;
+}
+
+.logo-nav ul li {
+  display: inline;
+}
+
+.logo-nav ul li a {
+    border-right: 10px;
+    line-height: 2.8;
+    text-decoration: none;
+    display: inline-block;
+    outline: none;
+    color: grey;
+    padding: 2px 1px 0;
+}
+
+
+.logo-nav ul li a:hover {
+    text-decoration: underline;
+}
+
+.container {
+  width: 60%;
+  height: auto;
+  border: 1px solid #000;
+}
+
+#main-heading {
+  background-color: rgba(0,0,0,0.9);
+  width: 100%;
+  margin: 0 auto;
+  height: 7vh;
+  color: white;
+  text-align: center;
+  padding: 5px;
+}
+
+.article {
+  margin: 10px;
+  border: 2px solid #000;
+}
+
+article p {
+  width: 100%;
+  text-align: center;
+}
+
+article a {
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+  border: 1px solid black;
+}
+
+/*Main Styling*/
+.main {
+    width: 100%;
+    height: 500px;
+}
+
+.form-container {
+    position: relative;
+    width: 50%;
+    top: 40%;
+    left: 30%;
+}
+
+.main-input {
+    position: relative;
+    width: 100%;
+}
+
+.main-input input {
+    width: 100%;
+    height: 100%;
+    font-size: 26px;
+    text-transform: capitalize;
+    text-align: center;
+    border-radius: 10px;
+    outline: none;
+    border: 2px solid rgb(0,100,0);
+}
+
+#home-head {
+  margin: 10px;
+  color: tomato;
+  line-height: 1.5em;
+}
+
+.content {
+  width: 50%;
+  margin-left: 20px;
+  padding: 10px;
+  font-size: 20px;
+  line-height: 1.5em;
+  color: tomato;
+}
+
+#enter-button, #reset-btn {
+    position: relative;
+    left: 12%;
+    width: 30%;
+    height: 30px;
+    margin: 10px;
+    background-color: transparent;
+    color: #fff;
+    font-size: 18px;
+    font-weight: bolder;
+    border-radius: 5px;
+    outline: none;
+    border: 2px solid grey;
+}
+
+/*Contact Page*/
+.contact-input, .text-input {
+    margin: 10px;
+    font-size: 18px;
+}
+
+label {
+    display: block;
+    font-family: sans-serif;
+    font-weight: 800px;
+    font-size: 20px;
+}
+
+.contact-input label {
+    display: block;
+    margin-bottom: 3px;
+    margin-left: -10px;
+}
+
+.contact-input input {
+    height: 30px;
+    font-size: 18px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    outline: none;
+    margin-left: -10px;
+    padding: 5px;
+    text-transform: capitalize;
+}
+
+.feedback {
+  border-radius: 10px;
+  outline: none;
+  padding: 5px;
+}
+
+.form-contact {
+    position: relative;
+    width: 40%;
+    top: 10%;
+    left: 10%;
+}
+
+.title {
+    border-bottom: 3px solid #000;
+    width: 50%;
+}
+
+input:focus {
+    outline: none;
+    color: orange;
+}
+
+textarea:focus {
+    outline: none;
+    color: orange;
+}
+
+/*Footer*/
+.footer {
+    background-image: linear-gradient(to bottom, white, #dddd00 50%, green);
+    width: 100%;
+    height: 200px;
+    margin-bottom: -50px;
+    text-align: center;
+}
+
+.social {
+  position: relative;
+  top: 30%;
+}
+
+.social ul {
+    list-style: none;
+    display: inline-flex;
+}
+
+.social ul li {
+    width: 50px;
+}
+
+.copyright {
+  position: relative;
+  top: 40%;   
+  font-size: 20px;
+}
+
+@media screen and (max-width: 1024px) {
+  .content {
+    width: 100%;
+    margin-left: 10px;
+  }
+}

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Contact Page</title>
+	<link rel="stylesheet" type="text/css" href="../css/style.css">
+	<link rel="shortcut icon" type="image/x-icon" href="../images/logo.png">
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+<div>
+	<header class="main-header">
+		<div class="header-wrapper">
+			<div class="logo-img"><img src="../images/logo.jpg" width="150px" height="200px"></div>
+			<h1 class="special">HorlerTech Solution</h1>
+			<nav class="logo-nav">
+				<ul>
+					<li id="home-bar"><a href="../index.html" target="_blank">Home</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="../CV_template/indexCV.html" target="_blank">CV Template</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="../jQueryVersion/indexQueryCV.html" target="_blank">Query CV</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="../CV_hardcopy/sampleCV.html" target="_blank">Sample CV</a></li>
+					<li><a href="#">|</a></li>
+					<li><a href="./blog.html" target="_blank">Blog</a></li>
+					<li><a href="#">|</a></li>
+					<li class="active"><a href="#">Contact</a></li>
+				</ul>
+			</nav>
+			<div class="search">
+				<label for="search">Search</label>
+				<input type="Search" name="nav-search" id="search" placeholder="Search...">
+			</div>
+		</div>
+	</header>
+
+	<main class="main">
+		<form class="form-contact">
+			<h1 class="title">Send us a feedback</h1>
+			<div class="contact-input">
+				<label>Full Name</label>
+				<input type="text" name="fName" id="sender-name" placeholder="Full Name" autocomplete="off" required>
+			</div>
+			<div>
+				<label>Message</label>
+				<textarea rows="10" cols="50" class="feedback"></textarea>
+			</div>
+			<div class="btn-input">
+				<button onclick="sendMail(); return false" id="enter-button">Submit</button>
+				<button id="reset-btn">Reset</button>
+			</div>
+		</form>
+	</main>
+
+	<footer>
+		<div class="footer">
+			<div class="social">
+				<ul>
+					<li><a href="https://www.twitter.com/Horler408" target="_blank"><img src="../images/twitter.png" title="twitter"></a></li>
+					<li><a href="https://www.facebook.com/nlongr" target="_blank"><img src="../images/facebook.png" title="facebook"></a></li>
+					<li><a href="https://linkedin.com/Horler408" target="_blank"><img src="../images/linked.png" title="linkedin"></a></li>
+					<li><a href="https://www.instagram.com" target="_blank"><img src="../images/instagram.png" title="instagram"></a></li>
+					<li><a href="https://www.github.com/Horler408" target="_blank"><img src="../images/git.png" title="github"></a></li>
+					<li><a href="https://www.skype.com/Horler408" target="_blank"><img src="../images/skype.png" title="skype"></a></li>
+				</ul>
+			</div>
+			<div class="copyright">
+				&copy;copyright HorlerTech 2020
+			</div>
+		</div>
+	</footer>
+</div>
+	<script type="text/javascript">
+		//const submitBtn = document.getElementById('enter-button');
+		const feedback = document.querySelector('.feedback');
+		const senderName = document.getElementById('sender-name');
+		const recipient="horler.web";
+		const at = String.fromCharCode(64);
+		const dotcom= "gmail.com";
+		var email = recipient + at + dotcom;
+
+		/*submitBtn.addEventListener('click', function(e)) {
+			e.preventDefault();
+
+			var link = "mailto:" + email
+		             + "?cc=horler.tech408@gmail.com"
+		             + "&subject=" + escape(senderName.value)
+		             + "&body=" + escape(feedback.value)
+		    ;
+
+		    window.location.href = link;
+		}
+*/
+		function sendMail() {
+		    var link = "mailto:" + email
+		             + "?cc=horler.tech408@gmail.com"
+		             + "&subject=" + escape(senderName.value)
+		             + "&body=" + escape(feedback.value)
+		    ;
+
+		    window.location.href = link;
+		}
+
+	</script>
+</body>
+</html>
