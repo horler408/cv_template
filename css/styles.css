@@ -45,6 +45,7 @@ input[type=search] {
     padding: 5px;
     outline: none;
     border-radius: 10px;
+    font-weight: bold;
 }
 
 .logo-img img {
@@ -82,7 +83,7 @@ input[type=search] {
 
 
 .logo-nav ul li a:hover {
-    font-size: 1.5rem;
+    border-bottom: 2px solid grey;
 }
 
 .container {
@@ -105,6 +106,7 @@ input[type=search] {
   margin: 10px;
   border: 2px solid grey;
   color: #fff;
+  font-weight: bolder;
 }
 
 article p {
@@ -121,6 +123,7 @@ article a {
 
 .title {
   text-transform: capitalize;
+  font-weight: bolder;
 }
 
 .form-container {
@@ -229,6 +232,6 @@ form h1 {
   }
 
   form h1 {
-    width: 70%;
+    width: 100%;
   }
 }

@@ -34,20 +34,7 @@
 	</header>
 <div>
 	<main>
-	<div class="section">
-	<h1 id="main-heading">Blog Content</h1>
-	<article class="article" id="art-001">
-		<h2>Lorem Ipsum</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada, metus ut mollis volutpat, felis est rhoncus turpis, in blandit est risus malesuada dui. Phasellus tempus elit at purus vestibulum suscipit. Donec quis est nec dui pretium venenatis sit amet eu nulla. Donec finibus, ipsum non semper dignissim, massa magna sagittis est, vitae vehicula nunc magna vitae diam. Integer ultrices mauris aliquet arcu tempor, at mattis justo sagittis. </p>
-			<center><a href="">Read More...</a></center></p>
-	</article>
-	<article class="article" id="art-002">
-		<h2>Lorem Ipsum</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada, metus ut mollis volutpat, felis est rhoncus turpis, in blandit est risus malesuada dui. Phasellus tempus elit at purus vestibulum suscipit. Donec quis est nec dui pretium venenatis sit amet eu nulla. Donec finibus, ipsum non semper dignissim, massa magna sagittis est, vitae vehicula nunc magna vitae diam. Integer ultrices mauris aliquet arcu tempor, at mattis justo sagittis. </p>
-			<center><a href="">Read More...</a></center></p>
-	</article>
-	</div>
-<!--Input Form-->
+	<!--Input Form-->
 	<form class="form-container">
 		<h1>Write a Post</h1>
 		<div class="input">
@@ -63,6 +50,21 @@
 			<button id="read-button">Read Article</button>
 		</div>
 	</form>
+<!--Post area-->
+	<div class="section">
+	<h1 id="main-heading">Blog Content</h1>
+	<article class="article" id="art-001">
+		<h2>Lorem Ipsum</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada, metus ut mollis volutpat, felis est rhoncus turpis, in blandit est risus malesuada dui. Phasellus tempus elit at purus vestibulum suscipit. Donec quis est nec dui pretium venenatis sit amet eu nulla. Donec finibus, ipsum non semper dignissim, massa magna sagittis est, vitae vehicula nunc magna vitae diam. Integer ultrices mauris aliquet arcu tempor, at mattis justo sagittis. </p>
+			<center><a href="">Read More...</a></center></p>
+	</article>
+	<article class="article" id="art-002">
+		<h2>Lorem Ipsum</h2>
+		<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam malesuada, metus ut mollis volutpat, felis est rhoncus turpis, in blandit est risus malesuada dui. Phasellus tempus elit at purus vestibulum suscipit. Donec quis est nec dui pretium venenatis sit amet eu nulla. Donec finibus, ipsum non semper dignissim, massa magna sagittis est, vitae vehicula nunc magna vitae diam. Integer ultrices mauris aliquet arcu tempor, at mattis justo sagittis. </p>
+			<center><a href="">Read More...</a></center></p>
+	</article>
+	</div>
+
 	</main>
 </div>
 <footer>
@@ -137,8 +139,6 @@
 
 	newHeading.textContent = topic.value;
 	newPara.textContent = content.value;
-
-	//"In sed porttitor lectus. Suspendisse dignissim dolor id lectus pellentesque, eu bibendum lectus malesuada. Phasellus volutpat sollicitudin suscipit. Donec id libero nisl. Praesent gravida purus vel euismod facilisis. Maecenas sit amet velit non lacus aliquam dictum vitae eu augue. Donec euismod enim elementum elit laoreet sodales. Lorem ipsum dolor sit amet, consectetur adipiscing elit.";
 
 	newArticle.appendChild(newHeading);
 	newArticle.appendChild(newPara);

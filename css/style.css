@@ -7,6 +7,7 @@ body {
   background-size: cover;
   background-position: center;
   width: 100%;
+  height: 100%;
   margin: 0 auto;
   overflow-x: hidden;
   font: .9em/1.2 Arial, Helvetica, sans-serif
@@ -34,9 +35,8 @@ body {
 .search {
     float: right;
     margin-right: 10px;
-    color: #fff;
+    color: brown;
     font-size: 1.2rem;
-    font-weight: bolder;
 }
 
 input[type=search] {
@@ -46,6 +46,7 @@ input[type=search] {
     padding: 5px;
     outline: none;
     border-radius: 10px;
+    font-weight: bold;
 }
 
 .logo-img img {
@@ -70,12 +71,12 @@ input[type=search] {
 }
 
 .logo-nav ul li {
-  display: inline;
+  display: inline-flex;
 }
 
 .logo-nav ul li a {
     border-right: 10px;
-    line-height: 2.8;
+    line-height: 1.5;
     text-decoration: none;
     display: inline-block;
     outline: none;
@@ -85,7 +86,7 @@ input[type=search] {
 
 
 .logo-nav ul li a:hover {
-    text-decoration: underline;
+    border-bottom: 2px solid grey;
 }
 
 .container {
@@ -109,17 +110,6 @@ input[type=search] {
   border: 2px solid #000;
 }
 
-article p {
-  width: 100%;
-  text-align: center;
-}
-
-article a {
-  padding: 5px;
-  text-decoration: none;
-  color: black;
-  border: 1px solid black;
-}
 
 /*Main Styling*/
 .main {
@@ -162,7 +152,8 @@ article a {
   padding: 10px;
   font-size: 20px;
   line-height: 1.5em;
-  color: tomato;
+  color: #fff;
+  font-weight: bolder;
 }
 
 #enter-button, #reset-btn {
@@ -187,7 +178,6 @@ article a {
 }
 
 label {
-    display: block;
     font-family: sans-serif;
     font-weight: 800px;
     font-size: 20px;
@@ -268,8 +258,22 @@ textarea:focus {
 }
 
 @media screen and (max-width: 1024px) {
+  body {
+    width: 100%;
+    height: 100%;
+  }
+
   .content {
     width: 100%;
     margin-left: 10px;
+  }
+
+  .title {
+    width: 100%;
+  }
+
+  #enter-button, #reset-btn {
+    width: 100%;
+    margin-left: -20px;
   }
 }
