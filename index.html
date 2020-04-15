@@ -46,7 +46,11 @@
 				<button id="reset-btn">Reset</button>
 			</div>
 		</form>
-		<div class="content"></div>
+		<div class="content">
+			<p>This is to welcome you to our Curriculum Vitae (CV) buider website, you can click on <a href="./CV_template/indexCV.html" target="_blank">CV Template</a> or <a href="./jQueryVersion/indexQueryCV.html" target="_blank">Query CV</a> tab on the menu bar to start your journey to buiding your professional resume. You can also check for the <a href="./CV_hardcopy/sampleCV.html" target="_blank">sample CV</a> by clicking the appropriate tab on the navigational bar. I hope you have a nice time navigating our site. Thanks</p> 
+			<br> 
+			<em>Dev. Abdulazeez Olaitan</em>
+		</div>
 	</main>
 
 	<footer>
@@ -95,7 +99,7 @@
 
 					homeHead.textContent = "Welcome, Mr. " + fName + '!';	
 				}
-				para.innerHTML = "<p>This is to welcome you to our Curriculum Vitae (CV) buider website, you can click on <b>CV Template</b> or <b>Query CV</b> tab on the menu bar to start your journey to buiding your professional resume. You can also check for a <b>sample CV</b> by clicking the appropriate tab on the navigational bar. I hope you have a nice time navigating our web pages. Thanks <br><br> <b>Dev. Abdulazeez Olaitan</b>.</p>";
+				para.style.display = 'block';
 				menu.style.display = 'block';
 			}
 			else {
@@ -104,6 +108,9 @@
 			}
 			
 		});
+		
+		alert("All information submitted on this site is solely for the view of the owner only. No part of this data is stored in any form of device or database as no database is used with this website. We therefore assure our user to disppel any fear of data exposure to third parties. Thanks for your understanding");
+
 	</script>
 </body>
 </html>

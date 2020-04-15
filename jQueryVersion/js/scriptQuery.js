@@ -8,6 +8,8 @@ function testPage() {
 testPage();
 */
 
+alert("All information submitted on this site is solely for the view of the owner only. No part of this data is stored in any form of device or database as no database is used with this website. We therefore assure our user to disppel any fear of data exposure to third parties. Thanks for your understanding.");
+
 /*Getting DOM Objects from Forms*/
 $(document).ready(() => {
 	const $footer = $('footer');

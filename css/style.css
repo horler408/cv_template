@@ -145,20 +145,30 @@ input[type=search] {
 
 #home-head {
   margin: 10px;
-  color: tomato;
+  color: green;
   line-height: 1.5em;
 }
 
 .content {
+  display: none;
   width: 50%;
   margin-left: 20px;
   padding: 10px;
   font-size: 24px;
   line-height: 1.5em;
+  color: rgb(0,100,0);
+}
+
+.content a {
+  text-decoration: none;
   color: #fff;
   font-weight: bolder;
 }
 
+.content a:hover {
+  border-bottom: 2px solid #fff;
+
+}
 #enter-button, #reset-btn {
     position: relative;
     left: 12%;
@@ -172,6 +182,11 @@ input[type=search] {
     border-radius: 5px;
     outline: none;
     border: 2px solid grey;
+}
+
+.alert-info {
+  font-size: 18px;
+  color: gold;
 }
 
 /*Contact Page*/
