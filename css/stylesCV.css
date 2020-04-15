@@ -149,6 +149,10 @@ input {
     outline: none;
 }
 
+.item input {
+	padding: 0 5px;
+}
+
 .item textarea, .item select {
 	border: 2px solid grey;
 	font-size: 18px;
