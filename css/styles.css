@@ -192,7 +192,6 @@ form h1 {
 .footer {
     background-image: linear-gradient(to bottom, white, #dddd00 50%, green);
     width: 100%;
-    height: 200px;
     margin-bottom: -50px;
     text-align: center;
 }
