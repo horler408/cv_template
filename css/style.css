@@ -24,6 +24,7 @@ body {
 }
 
 .header-wrapper {
+    position: relative;
     border: 1px solid lightgreen;
     background-color: rgb(79,185,227);
     padding: 10px;
@@ -150,7 +151,7 @@ input[type=search] {
   width: 50%;
   margin-left: 20px;
   padding: 10px;
-  font-size: 20px;
+  font-size: 24px;
   line-height: 1.5em;
   color: #fff;
   font-weight: bolder;
@@ -230,6 +231,7 @@ textarea:focus {
 
 /*Footer*/
 .footer {
+    position: relative;
     background-image: linear-gradient(to bottom, white, #dddd00 50%, green);
     width: 100%;
     height: 200px;
@@ -258,11 +260,6 @@ textarea:focus {
 }
 
 @media screen and (max-width: 1024px) {
-  body {
-    width: 100%;
-    height: 100%;
-  }
-
   .content {
     width: 100%;
     margin-left: 10px;

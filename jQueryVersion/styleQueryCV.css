@@ -19,9 +19,8 @@ body {
 }
 
 .header-wrapper {
-	position: fixed;
+	position: relative;
 	width: 100%;
-	z-index: 2;
 	margin-top: -20px;
 	box-shadow: 2px 5px 5px white;
     background-color: rgb(79,185,227);
@@ -98,7 +97,6 @@ label {
 
 .container, .display-container {
 	position: relative;
-	top: 250px;
 	margin-top: 20px;
 }
 
@@ -151,7 +149,8 @@ input {
     outline: none;
 }
 
-input[type=select] {
+.item textarea, .item select {
+	border: 2px solid grey;
 	font-size: 18px;
 	outline: none;
 }
@@ -298,6 +297,10 @@ span {
 	.item {
     	flex-basis: 80%;
     	height: 40px;
+	}
+
+	.item select {
+		width: 80%;
 	}
 
 	div+div {
