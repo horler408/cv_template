@@ -290,10 +290,9 @@ submitBtn.addEventListener('click', (e) => {
 		|| local.value === '' || primarySch.value === '' || priCert.value === '' || priStart.value === '' || priEnd.value === '' || secondarySch.value === ''
 		|| secCert.value === '' || secStart.value === '' || secEnd.value === '' ||tertiary1.value === '' || tertiaryCert1.value === '' || course1.value === ''
 		|| grade1.value === '' || tert1Start.value === '' || tert1End.value === '' || workExp1.value === '' || pos1.value === '' || workStart1.value === ''
-		|| workEnd1.value === '' || workExp2.value === '' || pos2.value === '' || workStart2.value === '' || workEnd2.value === '' 
-		|| skillsAcquired.value === '' || skillsCert.value === '' || refName1.value === '' || refName2.value === '' || refName3.value === '' 
-		|| refAddress1.value === '' || refAddress2.value === '' || refAddress3.value === '' || refPhone1.value === '' || refPhone2.value === '' 
-		|| refPhone3.value === '' || refEmail1.value === '' || refEmail2.value === '' || refEmail3.value === '') {
+		|| workEnd1.value === '' || pos2.value === '' || workStart2.value === '' || workEnd2.value === '' || refName1.value === '' || refName2.value === '' 
+		|| refName3.value === '' || refAddress1.value === '' || refAddress2.value === '' || refAddress3.value === '' || refPhone1.value === '' 
+		|| refPhone2.value === '' || refPhone3.value === '' || refEmail1.value === '' || refEmail2.value === '' || refEmail3.value === '') {
 
 		alert('Fill all necessary fields *');
 		window.location.href = "indexCV.html";
@@ -417,32 +416,53 @@ submitBtn.addEventListener('click', (e) => {
 		
 		work2.textContent = workExp2.value.toUpperCase();
 		role2.textContent = pos2.value;
-		workDate2.textContent = workStart2.value + ' ' +'to'+ ' ' + workEnd2.value;
 
+		if (workEnd2.value === '') {
+			workDate2.textContent = workStart2.value + ' ' +'-'+ ' ' + 'till date';
+		}
+		else {
+			workDate2.textContent = workStart2.value + ' ' +'to'+ ' ' + workEnd2.value;
+		}
 	
 //Skills and Certification
 		skillTitle.textContent = 'TECHNICAL SKILLS ACQUIRED';
 		skillTitle.classList.add('displayHead');
 
-		if(otherSkills.value !== '') {
-			technicalSkills.textContent = skillsAcquired.value + ' and ' + otherSkills.value;
+		if (skillsAcquired.value === '' && otherSkills.value === '') {
+			technicalSkills.textContent = "No technical skill acquired";
 		}
 		else {
-			technicalSkills.textContent = skillsAcquired.value;
-			otherSkills.style.display = 'none';	
+			if(otherSkills.value !== '') {
+				technicalSkills.textContent = skillsAcquired.value + ' and ' + otherSkills.value;
+				if (skillsAcquired.value === '') {
+					technicalSkills.textContent = otherSkills.value;
+				}
+			}
+			else {
+				technicalSkills.textContent = skillsAcquired.value;
+				otherSkills.style.display = 'none';	
+			}
 		}
 
 
 		certTitle.textContent = 'PROFESSIONAL CERTIFICATION';
 		certTitle.classList.add('displayHead');
 
-		if(otherCert.value !== '') {
-			technicalCert.textContent = skillsCert.value + ' and ' + otherCert.value;
+		if (skillsCert.value === '' && otherCert.value === '') {
+			technicalCert.textContent = "No Professional certificate obtained";
 		}
-		 else {
-		 	technicalCert.textContent = skillsCert.value;
-		 	otherSkills.style.display = 'none';	
-		 }
+		else {
+			if(otherCert.value !== '') {
+				technicalCert.textContent = skillsCert.value + ' and ' + otherCert.value;
+				if (skillsCert.value === '') {
+					technicalCert.textContent = otherCert.value;
+				}
+		}
+		 	else {
+		 		technicalCert.textContent = skillsCert.value;
+		 		otherCert.style.display = 'none';	
+		 	}	
+		}
 
 //Hobbies CheckBox
 		hobbyTitle.textContent = 'HOBBIES';

@@ -261,15 +261,8 @@ $(document).ready(() => {
 	$submitBtn.on('click', (e) => {
 		e.preventDefault();
 
-		if ($firstName.val() === '' || $lastName.val() === '' || $email.val() === '' || $phoneNo.val() === '' || $address.val() === '' || $careerObj.val() === ''
-		|| $dob.val() === '' || $pob.val() === '' || $sex.val() === '' || $status.val() === ''|| $country.val() === '' || $faith.val() === '' || $origin.val() === ''
-		|| $local.val() === '' || $primarySch.val() === '' || $priCert.val() === '' || $priStart.val() === '' || $priEnd.val() === '' || $secondarySch.val() === ''
-		|| $secCert.val() === '' || $secStart.val() === '' || $secEnd.val() === '' || $tertiary1.val() === '' || $tertiaryCert1.val() === '' || $course1.val() === ''
-		|| $grade1.val() === '' || $tert1Start.val() === '' || $tert1End.val() === '' || $workExp1.val() === '' || $pos1.val() === '' || $workStart1.val() === ''
-		|| $workEnd1.val() === '' || $workExp2.val() === '' || $pos2.val() === '' || $workStart2.val() === '' || $workEnd2.val() === '' 
-		|| $skillsAcquired.val() === '' || $skillsCert.val() === '' || $refName1.val() === '' || $refName2.val() === '' || $refName3.val() === '' 
-		|| $refAddress1.val() === '' || $refAddress2.val() === '' || $refAddress3.val() === '' || $refPhone1.val() === '' || $refPhone2.val() === '' 
-		|| $refPhone3.val() === '' || $refEmail1.val() === '' || $refEmail2.val() === '' || $refEmail3.val() === '') {
+		if ($firstName.val() === '' ) {
+			
 			$error.show();
 			alert('Fill all necessary fields *');
 			window.location.href = "indexQueryCV.html";
@@ -389,7 +382,13 @@ $(document).ready(() => {
 			
 			$work2.text($workExp2.val().toUpperCase()).css('marginLeft', '-10px');
 			$role2.text('Position Held: ' + $pos2.val());
-			$workDate2.text('Duration: ' + $workStart2.val() + ' ' +'to'+ ' ' + $workEnd2.val());
+			
+			if ($workEnd2.val() === '') {
+				$workDate2.text('Duration: ' + $workStart2.val() + ' ' + '-' + ' ' + 'till date');	
+			}
+			else {
+				$workDate2.text('Duration: ' + $workStart2.val() + ' ' +'to'+ ' ' + $workEnd2.val());
+			}
 	
 //Skills and Certification
 			$skillTitle.text('TECHNICAL SKILLS ACQUIRED');
@@ -398,14 +397,21 @@ $(document).ready(() => {
 			var $skillValues = $skillsAcquired.val() || [];
 			$skillValues = $skillValues.join(',');
 
-			if($otherSkills.val() !== '') {
-				$technicalSkills.text('Skills Acquired are: ' + $skillValues + ' and ' + $otherSkills.val());
+			if ($skillsAcquired.val() === '' && $otherSkills.val() === '') {
+				$technicalSkills.text("No technical skill acquired");
 			}
 			else {
-				$technicalSkills.text('Skills Acquired are: ' + $skillValues);
-				$otherSkills.hide();	
+				if($otherSkills.val() !== '') {
+					$technicalSkills.text('Skills Acquired are: ' + $skillValues + ' and ' + $otherSkills.val());
+					if ($skillsAcquired.val() === '') {
+						$technicalSkills.text($otherSkills.val());
+					}
+				}
+				else {
+					$technicalSkills.text('Skills Acquired are: ' + $skillValues);
+					$otherSkills.hide();	
+				}	
 			}
-			$technicalSkills.addClass('select-values');
 
 			$certTitle.text('PROFESSIONAL CERTIFICATION');
 			$certTitle.addClass('displayHead');
@@ -413,13 +419,22 @@ $(document).ready(() => {
 			var $certValues = $skillsCert.val() || [];
 			$certValues = $certValues.join(',');
 
-			if($otherCert.val() !== '') {
-				$technicalCert.text('Certification Obtained are: ' + $certValues + ' and ' + $otherCert.val());
+			if ($skillsCert.val() === '' && $otherCert.val() === '') {
+				$technicalCert.text("No Professional certificate obtained");
+				if ($skillsCert.val() === '') {
+					$technicalCert.text($otherCert.val());
+				}
 			}
 			else {
-				$technicalCert.text('Certification Obtained are: ' + $certValues);
-				$otherCert.hide();	
+				if($otherCert.val() !== '') {
+					$technicalCert.text('Certification Obtained are: ' + $certValues + ' and ' + $otherCert.val());
+				}
+				else {
+					$technicalCert.text('Certification Obtained are: ' + $certValues);
+					$otherCert.hide();	
+				}	
 			}
+			
 			$technicalCert.addClass('select-values');
 
 //Hobbies Checkbox Display
@@ -482,3 +497,11 @@ $(document).ready(() => {
 
 populateCountries("country", "state");
 
+/*|| $lastName.val() === '' || $email.val() === '' || $phoneNo.val() === '' || $address.val() === '' || $careerObj.val() === ''
+		|| $dob.val() === '' || $pob.val() === '' || $sex.val() === '' || $status.val() === ''|| $country.val() === '' || $faith.val() === '' || $origin.val() === ''
+		|| $local.val() === '' || $primarySch.val() === '' || $priCert.val() === '' || $priStart.val() === '' || $priEnd.val() === '' || $secondarySch.val() === ''
+		|| $secCert.val() === '' || $secStart.val() === '' || $secEnd.val() === '' || $tertiary1.val() === '' || $tertiaryCert1.val() === '' || $course1.val() === ''
+		|| $grade1.val() === '' || $tert1Start.val() === '' || $tert1End.val() === '' || $workExp1.val() === '' || $pos1.val() === '' || $workStart1.val() === ''
+		|| $workEnd1.val() === '' || $workExp2.val() === '' || $pos2.val() === '' || $workStart2.val() === '' || $refName1.val() === '' || $refName2.val() === '' 
+		|| $refName3.val() === '' || $refAddress1.val() === '' || $refAddress2.val() === '' || $refAddress3.val() === '' || $refPhone1.val() === '' 
+		|| $refPhone2.val() === '' || $refPhone3.val() === '' || $refEmail1.val() === '' || $refEmail2.val() === '' || $refEmail3.val() === ''*/

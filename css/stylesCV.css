@@ -263,6 +263,14 @@ span {
 	border-radius: 50%;
 }
 
+.skill-cert {
+	margin-bottom: 60px;
+}
+
+.other-skill-cert {
+	margin-top: 40px;
+}
+
 
 /*Footer*/
 .footer {
