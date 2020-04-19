@@ -119,7 +119,7 @@ label {
 }
 
 .edit {
-	width: 100%;
+	width: 80%;
 	height: 50px;
 	background-color: blue;
 	color: #fff;
@@ -127,7 +127,7 @@ label {
 	border-radius: 10px;
 }
 
-#add {
+#add, #add-exp {
 	width: 100px;
 	height: 50px;
 	cursor: pointer;

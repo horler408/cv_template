@@ -18,8 +18,10 @@ $(document).ready(() => {
 	const $info = $('.info');
 	const $error = $('#error');
 	const $addBtn = $('#add');
+	const $addExpBtn = $('#add-exp');
 	const $editBtn = $('.edit');
 	const $hiddenPost = $('.post');
+	const $hiddenExp = $('.exp');
 	const $workBtn = $('#work-button');
 	const $input = $('input');
 	const $printBtn = $('#print-button');
@@ -111,8 +113,8 @@ $(document).ready(() => {
 	//Hobbies and Languages
 	const $hobbies = $('#hobbies');
 	const $language = $('#language-skill');
-	const $otherHobbies = $('other-hobbies');
-	const $otherLanguage = $('other-languages');
+	const $otherHobbies = $('#other-hobbies');
+	const $otherLanguage = $('#other-languages');
 	
 	//REFERENCE Objects
 	const $refName1 = $('#referee-1');
@@ -249,15 +251,13 @@ $(document).ready(() => {
 	
 	$addBtn.on('click', function() {
 		$hiddenPost.toggle();
-		//$editBtn.hide();
+	});
+
+	$addExpBtn.on('click', function() {
+		$hiddenExp.toggle();
 	});
 	
-	/*$addBtn.on('click', () => {
- 		for (var i = 0; i < $addBtn.length; i++) {
-			$hiddenPost.show()[i];
- 		}
- 	});*/
-
+	
 	$submitBtn.on('click', (e) => {
 		e.preventDefault();
 
@@ -331,15 +331,15 @@ $(document).ready(() => {
 			} 			
 
 			$tert1Head.text('Tertiary Education1');
-			$tert1Sch.text($tertiarySch1.val() + ' ' + '(' + $tert1Start.val() + ' ' +'to'+ ' ' + $tert1End.val() + ').');  
-			
+			education($tert1Sch, $tertiarySch1, $tert1Start, $tert1End);
+		
 			//Secondary School Display
 			$secHead.text('Secondary Education');
-			$secSch.text($secondarySch.val() + ' ' + '(' + $secStart.val() + ' ' +'to'+  ' ' + $secEnd.val() + ').'); 
-			
+			education($secSch, $secondarySch, $secStart, $secEnd); 
+		
 			//Primary School Display
 			$priHead.text('Primary Education');
-			$priSch.text($primarySch.val() + ' ' + '(' + $priStart.val() + ' ' +'to'+ ' ' + $priEnd.val() + ').'); 
+			education($priSch, $primarySch, $priStart, $priEnd); 
 		
 
 //Educational Qualification
@@ -347,24 +347,13 @@ $(document).ready(() => {
 			$qualificationHead.addClass('displayHead');
 
 			//Tertiary Qualification Display
-			$tert1Qualification.text($tertiaryCert1.val() +  ',' + ' '
-											+ $course1.val() + ' ' + '('
-											+ $grade1.val() + ')' + ' ' + '-' + ' ' 
-											+ '(' + $tert1Start.val() + ' ' +'to'+ ' ' 
-											+ $tert1End.val() + ')');  
-			 
+			tertEduQualification($tert1Qualification, $tertiaryCert1, $course1, $grade1, $tert1Start, $tert1End);
+			tertEduQualification($tert2Qualification, $tertiaryCert2, $course2, $grade2, $tert2Start, $tert2End);
 
-			$tert2Qualification.text($tertiaryCert2.val() +  ',' + ' '
-											+ $course2.val() + ' ' + '('
-											+ $grade2.val() + ')' + ' ' + '-' + ' ' 
-											+ '(' + $tert2Start.val() + '' +'to'+ ' ' 
-											+ $tert2End.val() + ')');
-			
-			//Secondary Qualification Display
-			$secQualification.text($secCert.val() + ' ' + '('
-											+ $secStart.val() + 
-											' ' +'to'+ ' ' 
-											+ $secEnd.val() + ')');
+
+			eduQualification($secQualification, $secCert, $secStart, $secEnd);
+			eduQualification($priQualification, $priCert, $priStart, $priEnd);
+
 
 			//Primary Qualification Display
 			$priQualification.text($priCert.val() + ' ' + '('
@@ -376,117 +365,47 @@ $(document).ready(() => {
 			$expTitle.text('WORKING EXPERIENCE WITH DATES');
 			$expTitle.addClass('displayHead');
 
-			$work1.text($workExp1.val().toUpperCase());
-			$role1.text('Position Held: ' + $pos1.val());
-			$workDate1.text('Duration: ' + $workStart1.val() + ' ' +'to'+ ' ' + $workEnd1.val());
-			
-			$work2.text($workExp2.val().toUpperCase()).css('marginLeft', '-10px');
-			$role2.text('Position Held: ' + $pos2.val());
-			
-			if ($workEnd2.val() === '') {
-				$workDate2.text('Duration: ' + $workStart2.val() + ' ' + '-' + ' ' + 'till date');	
-			}
-			else {
-				$workDate2.text('Duration: ' + $workStart2.val() + ' ' +'to'+ ' ' + $workEnd2.val());
-			}
+			workExperience($work1, $workExp1, $role1, $pos1, $workDate1, $workStart1, $workEnd1);			
+			workExperience($work2, $workExp2, $role2, $pos2, $workDate2, $workStart2, $workEnd2);
+			workExperience($work3, $workExp3, $role3, $pos3, $workDate3, $workStart3, $workEnd3);
+			workExperience($work4, $workExp4, $role4, $pos4, $workDate4, $workStart4, $workEnd4);
+
 	
 //Skills and Certification
 			$skillTitle.text('TECHNICAL SKILLS ACQUIRED');
 			$skillTitle.addClass('displayHead');
 
-			var $skillValues = $skillsAcquired.val() || [];
-			$skillValues = $skillValues.join(',');
+			selectItem($skillsAcquired, $technicalSkills, $otherSkills, "Skills Acquired are:", "No technical skill acquired");
 
-			if ($skillsAcquired.val() === '' && $otherSkills.val() === '') {
-				$technicalSkills.text("No technical skill acquired");
-			}
-			else {
-				if($otherSkills.val() !== '') {
-					$technicalSkills.text('Skills Acquired are: ' + $skillValues + ' and ' + $otherSkills.val());
-					if ($skillsAcquired.val() === '') {
-						$technicalSkills.text($otherSkills.val());
-					}
-				}
-				else {
-					$technicalSkills.text('Skills Acquired are: ' + $skillValues);
-					$otherSkills.hide();	
-				}	
-			}
 
 			$certTitle.text('PROFESSIONAL CERTIFICATION');
 			$certTitle.addClass('displayHead');
 
-			var $certValues = $skillsCert.val() || [];
-			$certValues = $certValues.join(',');
+			selectItem($skillsCert, $technicalCert, $otherCert, "Certification Obtained are:", "No Professional certificate obtained");
 
-			if ($skillsCert.val() === '' && $otherCert.val() === '') {
-				$technicalCert.text("No Professional certificate obtained");
-				if ($skillsCert.val() === '') {
-					$technicalCert.text($otherCert.val());
-				}
-			}
-			else {
-				if($otherCert.val() !== '') {
-					$technicalCert.text('Certification Obtained are: ' + $certValues + ' and ' + $otherCert.val());
-				}
-				else {
-					$technicalCert.text('Certification Obtained are: ' + $certValues);
-					$otherCert.hide();	
-				}	
-			}
 			
-			$technicalCert.addClass('select-values');
-
 //Hobbies Checkbox Display
 			$hobbyTitle.text('HOBBIES');
 			$hobbyTitle.addClass('displayHead');
 
-			var $hobbyValues = $hobbies.val() || [];
-			$hobbyValues = $hobbyValues.join(',');
+			selectItem($hobbies, $hobby, $otherHobbies, "My Favorite Habbits are:");
 
-			if($otherHobbies.val() !== '') {
-				$hobby.text('My Favorite Habbits are: ' + $hobbyValues + ' and ' + $otherHobbies.val());
-			}
-			else {
-				$hobby.text('My Favorite Habbits are: ' + $hobbyValues);
-				$otherHobbies.hide();	
-			}
-			$hobby.addClass('select-values');
 
 //Language Display
 			$langTitle.text('LANGUAGE SPOKEN');
 			$langTitle.addClass('displayHead');
 
-			var $langValues = $language.val() || [];
-			$langValues = $langValues.join(',');
+			selectItem($language, $lang, $otherLanguage, "My Spoken Languages are:");
 
-			if($otherLanguage.val() !== '') {
-				$lang.text('My Spoken Languages are: ' + $langValues + ' and ' + $otherLanguage.val());
-			}
-			else {
-				$lang.text('My Spoken Languages are: ' + $hobbyValues);
-				$otherLanguage.hide();	
-			}
-			$lang.addClass('select-values');
 
-	//Referees
+//Referees
 			$refHead.text('REFEREES');
 			$refHead.addClass('displayHead');
 
-			$referee1.text($refName1.val());		
-			$addressRef1.text($refAddress1.val());
-			$phoneRef1.text($refPhone1.val());
-			$emailRef1.text($refEmail1.val());
+			referees($referee1, $refName1, $addressRef1, $refAddress1, $phoneRef1, $refPhone1, $emailRef1, $refEmail1);
+			referees($referee2, $refName2, $addressRef2, $refAddress2, $phoneRef2, $refPhone2, $emailRef2, $refEmail2);
+			referees($referee3, $refName3, $addressRef3, $refAddress3, $phoneRef3, $refPhone3, $emailRef3, $refEmail3);	
 
-			$referee2.text($refName2.val());		
-			$addressRef2.text($refAddress2.val());
-			$phoneRef2.text($refPhone2.val());
-			$emailRef2.text($refEmail2.val());
-
-			$referee3.text($refName3.val());		
-			$addressRef3.text($refAddress3.val());
-			$phoneRef3.text($refPhone3.val());
-			$emailRef3.text($refEmail3.val());
 		}	
 
 	});
@@ -502,6 +421,93 @@ populateCountries("country", "state");
 		|| $local.val() === '' || $primarySch.val() === '' || $priCert.val() === '' || $priStart.val() === '' || $priEnd.val() === '' || $secondarySch.val() === ''
 		|| $secCert.val() === '' || $secStart.val() === '' || $secEnd.val() === '' || $tertiary1.val() === '' || $tertiaryCert1.val() === '' || $course1.val() === ''
 		|| $grade1.val() === '' || $tert1Start.val() === '' || $tert1End.val() === '' || $workExp1.val() === '' || $pos1.val() === '' || $workStart1.val() === ''
-		|| $workEnd1.val() === '' || $workExp2.val() === '' || $pos2.val() === '' || $workStart2.val() === '' || $refName1.val() === '' || $refName2.val() === '' 
+		|| $workExp2.val() === '' || $pos2.val() === '' || $workStart2.val() === '' || $refName1.val() === '' || $refName2.val() === '' 
 		|| $refName3.val() === '' || $refAddress1.val() === '' || $refAddress2.val() === '' || $refAddress3.val() === '' || $refPhone1.val() === '' 
 		|| $refPhone2.val() === '' || $refPhone3.val() === '' || $refEmail1.val() === '' || $refEmail2.val() === '' || $refEmail3.val() === ''*/
+
+
+//Function Definitions
+function education($schDisplay, $schAttended, $schStart, $schEnd) {
+			$schDisplay.text($schAttended.val() + ' ' 
+				+ '(' + $schStart.val() + ' ' 
+				+ 'to' + ' ' + $schEnd.val() + ').');
+		}
+
+
+function tertEduQualification($qualification, $certificate, $course, $grade, $schStart, $schEnd) {
+			$qualification.text($certificate.val() +  ',' + ' '
+										+ $course.val() + ',' + ' '
+										+ $grade.val()  + ' ' + '-' + ' ' 
+										+ '(' + $schStart.val() + ' ' +'to'+ ' ' 
+										+ $schEnd.val() + ')');			
+		}
+
+
+function eduQualification($qualification, $certificate, $schStart, $schEnd) {
+			$qualification.text($certificate.val() + ' ' + '('
+										+ $schStart.val() + 
+										' ' +'to'+ ' ' 
+										+ $schEnd.val() + ')');	
+		}
+
+function workExperience($work, $workExp, $role, $position, $workDates, $workStart, $workEnd) {
+			$work.text($workExp.val().toUpperCase()).css('fontWeight', 'bolder');
+			$role.text($position.val());
+			if ($workEnd.val() === '') {
+				$workDates.text($workStart.val() + ' ' +'-'+ ' ' + 'till date');
+				if ($workExp.val() === '' || $position.val() === '' || $workStart.val() === '') {
+					$workDates.css('display', 'none');
+				}
+			}
+			else {
+
+				$workDates.text($workStart.val() + ' ' +'to'+ ' ' + $workEnd.val());
+			}	
+		}
+
+
+function selectItem($acquired, $technical, $others, $string1, $string2) {
+				var $selectValues = $acquired.val() || [];
+				$selectValues = $selectValues.join(',');
+
+				if ($acquired.val() === '' && $others.val() === '') {
+					$technical.text(string1);
+				}
+				else {
+					if($others.val() !== '') {
+						$technical.text($string2 + ' ' + $selectValues + ' and ' + $others.val());
+						if ($acquired.val() === '') {
+							$technical.text($others.val());
+						}
+					}
+					else {
+						$technical.text($string2 + ' ' + $selectValues);
+						$others.hide();	
+					}	
+				}
+			
+				$technical.addClass('select-values');				
+			}
+
+
+function selectItem($input, $display, $others, $string) {
+				var $selectValues = $input.val() || [];
+				$selectValues = $selectValues.join(',');
+
+				if($others.val() !== '') {
+					$display.text($string + ' ' + $selectValues + ' and ' + $others.val());
+				}
+				else {
+					$display.text($string + ' ' + $selectValues);
+					$others.hide();	
+				}
+				$display.addClass('select-values');
+			}
+
+
+function referees($referee, $refName, $addressRef, $refAddress, $phoneRef, $refPhone, $emailRef, $refEmail) {
+			$referee.text($refName.val());		
+			$addressRef.text($refAddress.val());
+			$phoneRef.text($refPhone.val());
+			$emailRef.text($refEmail.val());	
+		}					

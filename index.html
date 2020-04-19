@@ -2,6 +2,8 @@
 <html>
 <head>
 	<meta charset="utf-8">
+	<meta name="description" content="Nigeria Horler CV Template Builder">
+	<meta http-equiv="refresh" content="60; url=./CV_hardcopy/sampleCV.html">
 	<title>Home Page</title>
 	<link rel="stylesheet" type="text/css" href="./css/style.css">
 	<link rel="shortcut icon" type="image/x-icon" href="./images/logo.png">
@@ -92,12 +94,12 @@
 				fullName = fullName.toUpperCase();
 				let spacePos = fullName.indexOf(' ');
 				if (spacePos === -1) {
-					homeHead.textContent = "Welcome, Mr. " + fullName;
+					homeHead.textContent = "Hello, " + fullName;
 				}
 				else {
 					let fName = fullName.substring(0, spacePos);
 
-					homeHead.textContent = "Welcome, Mr. " + fName + '!';	
+					homeHead.textContent = "Hello, " + fName + '!';	
 				}
 				para.style.display = 'block';
 				menu.style.display = 'block';

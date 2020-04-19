@@ -5,7 +5,8 @@ function testPage() {
 
 //testPage();
 */
-alert("All information submitted on this site is solely for the view of the owner only. No part of this data is stored in any form of device or database as no database is used with this website. We therefore assure our user to disppel any fear of data exposure to third parties. Thanks for your understanding.");
+var info = "All information submitted on this site is solely for the view of the owner only. No part of this data is stored in any form of device or database as no database is used with this website. We therefore assure our user to disppel any fear of data exposure to third parties. Thanks for your understanding.";
+alert(info, 'Disclaimer');
 
 /*Getting DOM Objects from Forms*/
 const footer = document.querySelector('footer');
@@ -284,16 +285,17 @@ addBtn.addEventListener('click', function() {
 //Add Event Listener
 submitBtn.addEventListener('click', (e) => {
 	e.preventDefault();
-	//alert('Are you sure?');
-	if(firstName.value === '' || lastName.value === '' || email.value === '' || phoneNo.value === '' || address.value === '' || careerObj.value === ''
+	
+	/*if(firstName.value === '' || lastName.value === '' || email.value === '' || phoneNo.value === '' || address.value === '' || careerObj.value === ''
 		|| dob.value === '' || pob.value === '' || sex.value === '' || status.value === ''|| country.value === '' || faith.value === '' || origin.value === ''
 		|| local.value === '' || primarySch.value === '' || priCert.value === '' || priStart.value === '' || priEnd.value === '' || secondarySch.value === ''
 		|| secCert.value === '' || secStart.value === '' || secEnd.value === '' ||tertiary1.value === '' || tertiaryCert1.value === '' || course1.value === ''
 		|| grade1.value === '' || tert1Start.value === '' || tert1End.value === '' || workExp1.value === '' || pos1.value === '' || workStart1.value === ''
-		|| workEnd1.value === '' || pos2.value === '' || workStart2.value === '' || workEnd2.value === '' || refName1.value === '' || refName2.value === '' 
-		|| refName3.value === '' || refAddress1.value === '' || refAddress2.value === '' || refAddress3.value === '' || refPhone1.value === '' 
-		|| refPhone2.value === '' || refPhone3.value === '' || refEmail1.value === '' || refEmail2.value === '' || refEmail3.value === '') {
-
+		|| workExp2.value === '' || pos2.value === '' || workStart2.value === '' || refName1.value === '' 
+		|| refName2.value === '' || refName3.value === '' || refAddress1.value === '' || refAddress2.value === '' || refAddress3.value === '' 
+		|| refPhone1.value === '' || refPhone2.value === '' || refPhone3.value === '' || refEmail1.value === '' || refEmail2.value === '' || refEmail3.value === '') {
+	}*/
+	if (firstName.value === '' || lastName.value === ''){
 		alert('Fill all necessary fields *');
 		window.location.href = "indexCV.html";
 	}
@@ -319,7 +321,6 @@ submitBtn.addEventListener('click', (e) => {
 		var lName = lastName.value;
 
 		
-
 		fName = fName.toUpperCase();
 		mName = mName.toUpperCase();
 		lName = lName.toUpperCase();
@@ -362,18 +363,18 @@ submitBtn.addEventListener('click', (e) => {
 		else {
 			hiddenPost.classList.add('post');
 		} 
-		  
 		
+
 		tert1Head.textContent = 'Tertiary Education1';
-		tert1Sch.textContent = tertiarySch1.value + ' ' + '(' + tert1Start.value + ' ' +'to'+ ' ' + tert1End.value + ').';  
+		education(tert1Sch, tertiarySch1, tert1Start, tert1End);
 		
 		//Secondary School Display
 		secHead.textContent = 'Secondary Education';
-		secSch.textContent = secondarySch.value + ' ' + '(' + secStart.value + ' ' +'to'+  ' ' + secEnd.value + ').'; 
+		education(secSch, secondarySch, secStart, secEnd); 
 		
 		//Primary School Display
 		priHead.textContent = 'Primary Education';
-		priSch.textContent = primarySch.value + ' ' + '(' + priStart.value + ' ' +'to'+ ' ' + priEnd.value + ').'; 
+		education(priSch, primarySch, priStart, priEnd); 
 	
 
 		//Educational Qualification
@@ -381,179 +382,66 @@ submitBtn.addEventListener('click', (e) => {
 		qualificationHead.classList.add('displayHead');
 
 		//Tertiary Qualification Display
-		tert1Qualification.textContent =  tertiaryCert1.value +  ',' + ' '
-										+ course1.value + ' ' + '('
-										+ grade1.value + ')' + ' ' + '-' + ' ' 
-										+ '(' + tert1Start.value + ' ' +'to'+ ' ' 
-										+ tert1End.value + ')';
-		 
+		eduQualification(tert1Qualification, tertiaryCert1, course1, grade1, tert1Start, tert1End);
+		eduQualification(tert2Qualification, tertiaryCert2, course2, grade2, tert2Start, tert2End);
 
-		 tert2Qualification.textContent =  tertiaryCert2.value +  ',' + ' '
-										+ course2.value + ' ' + '('
-										+ grade2.value + ')' + ' ' + '-' + ' ' 
-										+ '(' + tert2Start.value + '' +'to'+ ' ' 
-										+ tert2End.value + ')';
-		
-		//Secondary Qualification Display
-		secQualification.textContent = secCert.value + ' ' + '('
-										+ secStart.value + 
-										' ' +'to'+ ' ' 
-										+ secEnd.value + ')';
 
-		//Primary Qualification Display
-		priQualification.textContent = priCert.value + ' ' + '('
-										+ priStart.value + 
-										' ' +'to'+ ' ' 
-										+ priEnd.value + ')';
+		eduQualification(secQualification, secCert, secStart, secEnd);
+		eduQualification(priQualification, priCert, priStart, priEnd);
 	
 //Working Experience
 		expTitle.textContent = 'WORKING EXPERIENCE WITH DATES';
 		expTitle.classList.add('displayHead');
 
-		work1.textContent = workExp1.value.toUpperCase();
-		role1.textContent = pos1.value;
-		workDate1.textContent = workStart1.value + ' ' +'to'+ ' ' + workEnd1.value;
+		workExperience(work1, workExp1, role1, pos1, workDate1, workStart1, workEnd1);
+		workExperience(work2, workExp2, role2, pos2, workDate2, workStart2, workEnd2);
+		workExperience(work3, workExp3, role3, pos3, workDate3, workStart3, workEnd3);
+		workExperience(work4, workExp4, role4, pos4, workDate4, workStart4, workEnd4);
 		
-		work2.textContent = workExp2.value.toUpperCase();
-		role2.textContent = pos2.value;
-
-		if (workEnd2.value === '') {
-			workDate2.textContent = workStart2.value + ' ' +'-'+ ' ' + 'till date';
-		}
-		else {
-			workDate2.textContent = workStart2.value + ' ' +'to'+ ' ' + workEnd2.value;
-		}
-	
 //Skills and Certification
 		skillTitle.textContent = 'TECHNICAL SKILLS ACQUIRED';
 		skillTitle.classList.add('displayHead');
 
-		if (skillsAcquired.value === '' && otherSkills.value === '') {
-			technicalSkills.textContent = "No technical skill acquired";
-		}
-		else {
-			if(otherSkills.value !== '') {
-				technicalSkills.textContent = skillsAcquired.value + ' and ' + otherSkills.value;
-				if (skillsAcquired.value === '') {
-					technicalSkills.textContent = otherSkills.value;
-				}
-			}
-			else {
-				technicalSkills.textContent = skillsAcquired.value;
-				otherSkills.style.display = 'none';	
-			}
-		}
-
+		skill_cert(technicalSkills, skillsAcquired, otherSkills, "No technical skill acquired");
 
 		certTitle.textContent = 'PROFESSIONAL CERTIFICATION';
 		certTitle.classList.add('displayHead');
 
-		if (skillsCert.value === '' && otherCert.value === '') {
-			technicalCert.textContent = "No Professional certificate obtained";
-		}
-		else {
-			if(otherCert.value !== '') {
-				technicalCert.textContent = skillsCert.value + ' and ' + otherCert.value;
-				if (skillsCert.value === '') {
-					technicalCert.textContent = otherCert.value;
-				}
-		}
-		 	else {
-		 		technicalCert.textContent = skillsCert.value;
-		 		otherCert.style.display = 'none';	
-		 	}	
-		}
+		skill_cert(technicalCert, skillsCert, otherCert, "No Professional certificate obtained");
+		
 
 //Hobbies CheckBox
 		hobbyTitle.textContent = 'HOBBIES';
 		hobbyTitle.classList.add('displayHead');
 
-		if(hobbySport.checked) {
-			sport.textContent = hobbySport.value;
-		}
+		hobby(hobbySport, sport);
+		hobby(hobbyReading, reading);
+		hobby(hobbySwimming, swimming);
+		hobby(hobbyGames, games);
+		hobby(hobbyTraveling, traveling);
+		hobby(hobbyFriends, friends);	
 
-		if(hobbyReading.checked) {
-			reading.textContent = hobbyReading.value;
-		}
-
-		if(hobbySwimming.checked) {
-			swimming.textContent = hobbySwimming.value;
-		}
-
-		if(hobbyGames.checked) {
-			games.textContent = hobbyGames.value;
-		}
-
-		if(hobbyTraveling.checked) {
-			traveling.textContent = hobbyTraveling.value;
-		}
-
-		if(hobbyFriends.checked) {
-			friends.textContent = hobbyFriends.value;
-		}
-
-		// else {
-		// 	hobbies.style.display = 'none';
-		// }
-
-//Language Spoken
+		
 		langTitle.textContent = 'LANGUAGE SPOKEN';	
 		langTitle.classList.add('displayHead');
 
-		if(yoruba.checked) {
-			langYoruba.textContent = yoruba.value;
-		}
-
-		if(hausa.checked) {
-			langHausa.textContent = hausa.value;
-		}
-
-		if(igbo.checked) {
-			langIgbo.textContent = igbo.value;
-		}
-
-		if(english.checked) {
-			langEnglish.textContent = english.value;
-		}
-
-		if(french.checked) {
-			langFrench.textContent = french.value;
-		}
-
-		if(german.checked) {
-			langGerman.textContent = german.value;
-		}
-
-		if(spanish.checked) {
-			langSpanish.textContent = spanish.value;
-		}
-
-		if(portuguese.checked) {
-			langPortugal.textContent = portuguese.value;
-		}
-
-		// else {
-		// 	language.style.display = 'none';
-		// }
+		languageSpoken(yoruba, langYoruba);
+		languageSpoken(hausa, langHausa);
+		languageSpoken(igbo, langIgbo);
+		languageSpoken(english, langEnglish);
+		languageSpoken(french, langFrench);
+		languageSpoken(german, langGerman);
+		languageSpoken(spanish, langSpanish);
+		languageSpoken(portuguese, langPortugal)
 
 //Referees Display
 		refHead.textContent = 'REFEREES';
 		refHead.classList.add('displayHead');
 
-		referee1.textContent = refName1.value;		
-		addressRef1.textContent = refAddress1.value;
-		phoneRef1.textContent = refPhone1.value;
-		emailRef1.textContent = refEmail1.value;
+		referees(referee1, refName1, addressRef1, refAddress1, phoneRef1, refPhone1, emailRef1, refEmail1);
+		referees(referee2, refName2, addressRef2, refAddress2, phoneRef2, refPhone2, emailRef2, refEmail2);
+		referees(referee3, refName3, addressRef3, refAddress3, phoneRef3, refPhone3, emailRef3, refEmail3);
 
-		referee2.textContent = refName2.value;		
-		addressRef2.textContent = refAddress2.value;
-		phoneRef2.textContent = refPhone2.value;
-		emailRef2.textContent = refEmail2.value;
-
-		referee3.textContent = refName3.value;		
-		addressRef3.textContent = refAddress3.value;
-		phoneRef3.textContent = refPhone3.value;
-		emailRef3.textContent = refEmail3.value;
 
 	//window.location.href = "indexCV.html";
 	//window.location.replace("indexCV.html");
@@ -566,3 +454,79 @@ submitBtn.addEventListener('click', (e) => {
 populateCountries("country", "state");
 
 
+//Function Definitions
+function education(schDisplay, schAttended, schStart, schEnd) {
+			schDisplay.textContent = schAttended.value + ' ' + '(' + schStart.value + ' ' + 'to' + ' ' + schEnd.value + ').';
+		}
+
+
+function eduQualification(qualification, certificate, course, grade, schStart, schEnd) {
+			qualification.textContent =  certificate.value +  ',' + ' '
+										+ course.value + ' ' + '('
+										+ grade.value + ')' + ' ' + '-' + ' ' 
+										+ '(' + schStart.value + ' ' +'to'+ ' ' 
+										+ schEnd.value + ')';			
+		}
+
+
+function eduQualification(qualification, certificate, schStart, schEnd) {
+			qualification.textContent = certificate.value + ' ' + '('
+										+ schStart.value + 
+										' ' +'to'+ ' ' 
+										+ schEnd.value + ')';	
+		}
+
+function workExperience(work, workExp, role, position, workDates, workStart, workEnd) {
+			work.textContent = workExp.value.toUpperCase();
+			role.textContent = position.value;
+			if (workEnd.value === '') {
+				workDates.textContent = workStart.value + ' ' +'-'+ ' ' + 'till date';
+				if (workExp.value === '' || position.value === '' || workStart.value === '') {
+					workDates.style.display = 'none';
+				}
+			}
+			else {
+				workDates.textContent = workStart.value + ' ' +'to'+ ' ' + workEnd.value;
+			}	
+		}
+
+
+function skill_cert(technical, acquired, others, string) {
+			if (acquired.value === '' && others.value === '') {
+				technical.textContent = string;
+		}
+			else {
+				if(others.value !== '') {
+					technical.textContent = acquired.value + ' and ' + others.value;
+					if (acquired.value === '') {
+						technical.textContent = others.value;
+					}
+				}
+				else {
+					technical.textContent = acquired.value;
+					others.style.display = 'none';	
+				}
+			}	
+		}
+
+
+function hobby(hobby, display) {
+			if(hobby.checked) {
+				display.textContent = hobby.value;
+			}
+		}
+
+
+function languageSpoken(language, display) {
+			if(language.checked) {
+				display.textContent = language.value;
+			}
+		}
+
+
+function referees(referee, refName, addressRef, refAddress, phoneRef, refPhone, emailRef, refEmail) {
+			referee.textContent = refName.value;		
+			addressRef.textContent = refAddress.value;
+			phoneRef.textContent = refPhone.value;
+			emailRef.textContent = refEmail.value;	
+		}			
