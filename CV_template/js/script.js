@@ -5,8 +5,7 @@ function testPage() {
 
 //testPage();
 */
-var info = "All information submitted on this site is solely for the view of the owner only. No part of this data is stored in any form of device or database as no database is used with this website. We therefore assure our user to disppel any fear of data exposure to third parties. Thanks for your understanding.";
-alert(info, 'Disclaimer');
+
 
 /*Getting DOM Objects from Forms*/
 const footer = document.querySelector('footer');
@@ -14,7 +13,8 @@ const mainHeader = document.querySelector('.main-header');
 const displayContainer = document.querySelector('.display-container');
 const error = document.getElementById('error-message');
 const addBtn = document.getElementById('add');
-const editBtn = document.querySelector('.edit');
+const addExpBtn = document.getElementById('add-exp');
+const expHidden = document.querySelector('.exp');
 const hiddenPost = document.querySelector('.post');
 const work = document.getElementById('work');
 const workBtn = document.getElementById('work-button');
@@ -266,20 +266,26 @@ var addressRef3 = document.getElementById('referee-3-add');
 var phoneRef3 = document.getElementById('referee-3-phone');
 var emailRef3 = document.getElementById('referee-3-email');
 
-//Add Work Experience Event Listener
-// workBtn.addEventListener('click', () => {
-// 	for (var i = 0; i < click.length; i++) {
-		
-// 	}
-// })
-
 
 
 
 //Add Button Event Listener
 addBtn.addEventListener('click', function() {
-	hiddenPost.style.display = 'block';
-	editBtn.style.display = 'none';
+	if (hiddenPost.style.display === 'none') {
+		hiddenPost.style.display = 'block';	
+	}
+	else {
+		hiddenPost.style.display = 'none'
+	}
+});
+
+addExpBtn.addEventListener('click', () => {
+	if (expHidden.style.display === 'none') {
+		expHidden.style.display = 'block';	
+	}
+	else {
+		expHidden.style.display = 'none';
+	}
 })
 
 //Add Event Listener

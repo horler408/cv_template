@@ -154,9 +154,11 @@ input {
 }
 
 .item textarea, .item select {
-	border: 2px solid grey;
-	font-size: 18px;
-	outline: none;
+	width: 100%;
+    font-size: 18px;
+    border: 2px solid grey;
+    border-radius: 5px;
+    outline: none;
 }
 
 .decision {
@@ -323,5 +325,9 @@ span {
 
 	textarea {
 		width: 100%;
+	}
+
+	.decision {
+		margin-left: 40px;
 	}	
 }
