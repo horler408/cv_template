@@ -7,6 +7,7 @@ body {
   background-size: cover;
   background-position: center;
   width: 100%;
+  min-height: 100vh;
   margin: 0 auto;
   overflow-x: hidden;
   font: .9em/1.2 Arial, Helvetica, sans-serif
@@ -176,7 +177,7 @@ article a {
   outline: none;
   border: 2px solid grey;
   border-radius: 5px;
-  color: #fff;
+  color: #000;
   background-color: transparent;
   font-weight: bolder;
   margin-right: 20px;

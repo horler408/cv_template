@@ -44,7 +44,7 @@
 			</div>
 			<div class="contact-input">
 				<label>Message</label>
-				<textarea rows="10" cols="30" class="feedback"></textarea>
+				<textarea rows="5" cols="20" class="feedback"></textarea>
 			</div>
 			<div class="btn-input">
 				<button onclick="sendMail(); return false" id="enter-button">Submit</button>
@@ -80,18 +80,6 @@
 		const dotcom= "gmail.com";
 		var email = recipient + at + dotcom;
 
-		/*submitBtn.addEventListener('click', function(e)) {
-			e.preventDefault();
-
-			var link = "mailto:" + email
-		             + "?cc=horler.tech408@gmail.com"
-		             + "&subject=" + escape(senderName.value)
-		             + "&body=" + escape(feedback.value)
-		    ;
-
-		    window.location.href = link;
-		}
-*/
 		function sendMail() {
 		    var link = "mailto:" + email
 		             + "?cc=horler.tech408@gmail.com"
