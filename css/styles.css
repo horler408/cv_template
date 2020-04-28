@@ -75,6 +75,7 @@ input[type=search] {
 .logo-nav ul li a {
     border-right: 10px;
     line-height: 1.5;
+    font-size: 1.5em;
     text-decoration: none;
     display: inline-block;
     outline: none;
