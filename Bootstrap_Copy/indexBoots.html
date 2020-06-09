@@ -1,15 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CV Template(jQuery)</title>
-	<link rel="stylesheet" type="text/css" href="./styleQueryCV.css">
-	<meta name="viewport" content="width=device-width" />
+	<title>CV Template</title>
+	<meta charset="utf-8">
 	<link rel="shortcut icon" type="image/x-icon" href="../images/logo.png">
+	<link rel="stylesheet" type="text/css" href="bootstrapCSS.css">
+	
 </head>
 <body>
 <div>
 	<button class="print">Print</button>
 </div>
+
 	<header class="main-header">
 		<div class="header-wrapper">
 			<div class="logo-img"><img src="../images/logo.jpg" width="150px" height="200px"></div>
@@ -18,17 +20,17 @@
 				<ul>
 					<li id="home-bar"><a href="../index.html">Home</a></li>
 					<li><a href="#">|</a></li>
-					<li><a href="../CV_template/indexCV.html">CV Template</a></li>
+					<li class="active"><a href="../CV_template/indexCV.html">CV Template</a></li>
 					<li><a href="#">|</a></li>
-					<li class="active"><a href="#">Query CV</a></li>
+					<li><a href="../jQueryVersion/indexQueryCV.html">Query CV</a></li>
 					<li><a href="#">|</a></li>
-					<li><a href="../Bootstrap_Copy/indexBoots.html">Bootstrap</a></li>
+					<li><a href="#">Bootstrap</a></li>
 					<li><a href="#">|</a></li>
 					<li><a href="../CV_hardcopy/sampleCV.html">Sample CV</a></li>
 					<li><a href="#">|</a></li>
 					<li><a href="../pages/blog.html">Blog</a></li>
 					<li><a href="#">|</a></li>
-					<li><a href="../pages/contact.html" target="_blank">Contact</a></li>
+					<li><a href="../pages/contact.html" target>Contact</a></li>
 				</ul>
 			</nav>
 			<div class="search">
@@ -37,83 +39,84 @@
 			</div>
 		</div>
 	</header>
+
 <main>
+	<div id="time-stamp">
+	<h2>Current Time is: &nbsp <span id="time"></span></h2></div>
 
 	<form class="container">
 		<fieldset>
 			<div class="info" id="error-message">All fields with * are required</div>
 			<h2>Personal Information</h2>
 		<div class="wrapper">
-			<div class="item">
+			<div class="form-group">
 				<label for="first-name">First Name<span>*</span></label>
-				<input type="text" name="fName" id="first-name" placeholder="e.g Jonathan" required>
+				<input type="text" class="form-control" id="first-name" placeholder="e.g Adisa">
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="middle-name">Middle Name<span>*</span></label>
-				<input type="text" name="mName" id="middle-name" placeholder="e.g Ebele" required>
+				<input type="text" class="form-control" id="middle-name" placeholder="e.g Muhammad">
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="last-name">Last Name<span>*</span></label>
-				<input type="text" name="lName" id="last-name" placeholder="e.g Goodluck" required>
+				<input type="text" class="form-control" id="last-name" placeholder="e.g Buhari">
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="contact-address">Contact Address<span>*</span></label>
-				<input type="text" name="address" id="contact-address" placeholder="e.g 5, Mafoluku street, Surulere, Lagos state" required>
+				<input type="text" class="form-control" id="contact-address" placeholder="e.g 5, Mafoluku street, Surulere, Lagos state">
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="phone-number">Phone Number<span>*</span></label>
-				<input type="tel" name="phoneNo" id="phone-number">
+				<input type="tel" class="form-control" id="phone-number">
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="email-address">Email<span>*</span></label>
-				<input type="Email" name="emailAdd" id="email-address" multiple required>
+				<input type="Email" name="emailAdd" id="email-address" class="form-control" multiple>
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for=career-objectives>Career Objectives<span>*</span></label>
-				<textarea id="career-objectives" cols="" rows=""></textarea> 
+				<textarea id="career-objectives" class="form-control" cols="30" rows=""></textarea> 
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="dob">Date of birth<span>*</span></label>
-				<input type="date" name="" id="dob">
+				<input type="date" name="" id="dob" class="form-control">
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="pob">Place of birth<span>*</span></label>
-				<input type="text" name="" id="pob">
+				<input type="text" name="" id="pob" class="form-control">
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="gender">Gender<span>*</span></label>
-				<select id="gender">
-					<option>Male</option>
-					<option>Female</option>
+				<select id="gender" class="form-control">
+					<option value="none">--Select--</option>
+					<option value="Male">Male</option>
+					<option value="Female">Female</option>
 				</select>
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="status">Marital Status<span>*</span></label>
-				<select id="status">
-					<option>Single</option>
-					<option>Married</option>
-					<option>Divorced</option>
+				<select id="status" class="form-control">
+					<option value="none">-Choose--</option>
+					<option value="Single">Single</option>
+					<option value="Married">Married</option>
+					<option value="Divorced">Divorced</option>
 				</select>
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="country">Nationalty<span>*</span></label>
-				<select type="text" id="country" name="country"></select>
+				<select type="text" id="country" class="form-control" name="country"></select>
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="faith">Religion<span>*</span></label>
-				<input type="text" id="faith">
+				<input type="text" id="faith" class="form-control">
 			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="state">State of origin<span>*</span></label>
-				<select type="text" name="state" id="state"></select>
+				<select type="text" name="state" id="state" class="form-control"></select>
 			</div>
-			<div class="item">
-				<label for="passport">Upload Passport</label>
-				<input type="file" name="" id="passport">
-			</div>
-			<div class="item">
+			<div class="form-group">
 				<label for="local">Local Government<span>*</span></label>
-				<input type="text" name="" id="local">
+				<input type="text" name="" id="local" class="form-control">
 			</div>
 		</div>
 	</fieldset>
@@ -211,15 +214,15 @@
 		</div>
 		<div class="post wrapper">
 			<div class="item">
-					<label for="tertiary2">Other Certificate Obtained</label>
+					<label for="tertiary2">Other Certificate Obtained<span>*</span></label>
 					<input type="text" id="tertiary2">
 			</div>
 			<div class="item">
-					<label for="course2">Course of Study</label>
+					<label for="course2">Course of Study<span>*</span></label>
 					<input type="text" id="course2">
 			</div>
 			<div class="item">
-				<label for="tert2-cert">Certificate Obtained</label>
+				<label for="tert2-cert">Certificate Obtained<span>*</span></label>
 				<select id="tert2-cert">
 					<option>None</option>
 					<option>Phd</option>
@@ -231,7 +234,7 @@
 				</select>
 			</div>
 			<div class="item">
-				<label for="tert2-grade">Grade Obtained</label>
+				<label for="tert2-grade">Grade Obtained<span>*</span></label>
 				<select id="tert2-grade">
 					<option value="">None</option>
 					<option value="First Class">First Class</option>
@@ -244,11 +247,11 @@
 				</select>
 			</div>
 			<div class="item">
-					<label for="t2-start-date">Start date</label>
+					<label for="t2-start-date">Start date<span>*</span></label>
 					<input type="date" id="t2-start-date">
 			</div>
 			<div class="item">
-					<label for="t2-end-date">End date</label>
+					<label for="t2-end-date">End date<span>*</span></label>
 					<input type="date" id="t2-end-date">
 			</div>
 		</div>
@@ -270,7 +273,7 @@
 				<input type="date" id="work-start-1">
 			</div>
 			<div class="item">
-				<label for="work-end-1">End date</label>
+				<label for="work-end-1">End date<span>*</span></label>
 				<input type="date" id="work-end-1">
 			</div>
 		</div>
@@ -281,7 +284,7 @@
 				<input type="text" id="work-2">
 			</div>
 			<div class="item">
-				<label for="pos-2">Position Held</label>
+				<label for="pos-2">Position Held<span>*</span></label>
 				<input type="text" id="pos-2">
 			</div>
 			<div class="item">
@@ -296,10 +299,10 @@
 
 		<div class="wrapper">
 			<div class="item">
-				<label for="work-3">Name and address of Organisation 3</label>
+				<label for="work-3">Name and address of Organisation 3<span>*</span></label>
 				<input type="text" id="work-3">
 			</div>
-			<div class="item">
+			<div class="item extra" >
 				<label for="pos-3">Position Held</label>
 				<input type="text" id="pos-3">
 			</div>
@@ -320,7 +323,7 @@
 				<label for="work-4">Name and address of Organisation 4</label>
 				<input type="text" id="work-4">
 			</div>
-			<div class="item">
+			<div class="item extra">
 				<label for="pos-4">Position Held</label>
 				<input type="text" id="pos-4">
 			</div>
@@ -370,7 +373,7 @@
 				<label for="other-skills" class="other">Other skills not specified</label>
 				<input type="text" id="other-skills" placeholder="Other skills">
 			</div>
-			<div class="item  other-skill-cert">
+			<div class="item other-skill-cert">
 				<label for="other-cert" class="other">Other Certification</label>
 				<input type="text" id="other-cert" placeholder="Other certifications">
 			</div>
@@ -379,48 +382,66 @@
 	<fieldset>
 		<h2>hobbies and Language Spoken</h2>
 		<div class="wrapper">
-				<div class="item skill-cert">
-				<label>Language Skills<span>*</span></label>
-				<select multiple id="language-skill">
-					<option value="">--Select--</option>
-					<option value="Yoruba">Yoruba</option>
-					<option value="Hausa">Hausa</option>
-					<option value="Igbo">Igbo</option>
-					<option value="English">English</option>
-					<option value="French">French</option>
-					<option value="Spanish">Spanish</option>
-					<option value="German">German</option>
-					<option value="Portuguese">Portuguese</option>
-					<option value="Arabic">Arabic</option>
-					<option value="Africana">Africana</option>
-				</select>
+				<div>
+					<input type="checkbox" name="sports" value="Sports" id="sports" class="check">
+					<label for="sports" class="check-label">Sports</label>
+				</div>
+				<div>
+					<input type="checkbox" name="reading" value="Reading" id="reading" class="check">
+					<label for="reading" class="check-label">Reading</label>
+				</div>
+				<div>
+					<input type="checkbox" name="swimming" value="Swimming" id="swimming" class="check">
+					<label for="swimming" class="check-label">Swimming</label>
+				</div>
+				<div>
+					<input type="checkbox" name="games" value="Video Games" id="games" class="check">
+					<label for="games" class="check-label">Video Games</label>
+				</div>
+				<div>
+					<input type="checkbox" name="traveling" value="Traveling" id="traveling" class="check">
+					<label for="traveling" class="check-label">Travelling</label>
+				</div>
+				<div>
+					<input type="checkbox" name="meeting" value="Making Friends" id="meeting" class="check">
+					<label for="meeting" class="check-label">Making Friends</label>
+				</div>
 			</div>
-			<div class="item skill-cert">
-				<label>Hobbies<span>*</span></label>
-				<select multiple id="hobbies">
-					<option value="">--Select--</option>
-					<option value="Soccer">Soccer</option>
-					<option value="Football">Football</option>
-					<option value="Basketball">Basketball</option>
-					<option value="Swimming">Swimming</option>
-					<option value="Reading">Reading</option>
-					<option value="Video Games">Video Games</option>
-					<option value="Skiing">Skiing</option>
-					<option value="Gymnastic">Gymnastic</option>
-					<option value="Athletes">Athletes</option>
-				</select>
+			<div class="wrapper">
+				<div>
+					<input type="checkbox" name="yoruba" value="Yoruba" id="yoruba" class="check">
+					<label for="yoruba" class="check-label">Yoruba</label>
+				</div>
+				<div>
+					<input type="checkbox" name="hausa" value="Hausa" id="hausa" class="check">
+					<label for="hausa" class="check-label">Hausa</label>
+				</div>
+				<div>
+					<input type="checkbox" name="igbo" value="Igbo" id="igbo" class="check">
+					<label for="igbo" class="check-label">Igbo</label>
+				</div>
+				<div>
+					<input type="checkbox" name="english" value="English" id="english" class="check">
+					<label for="english" class="check-label">English</label>
+				</div>
+				<div>
+					<input type="checkbox" name="french" value="French" id="french" class="check">
+					<label for="french" class="check-label">French</label>
+				</div>
+				<div>
+					<input type="checkbox" name="german" value="German" id="german" class="check">
+					<label for="german" class="check-label">German</label>
+				</div>
+				<div>
+					<input type="checkbox" name="portuguese" value="Portuguese" id="portuguese" class="check">
+					<label for="portuguese" class="check-label">Portuguese</label>
+				</div>
+				<div>
+					<input type="checkbox" name="spanish" value="Spanish" id="spanish" class="check">
+					<label for="spanish" class="check-label">Spanish</label>
+				</div>
 			</div>
-			<div class="item other-skill-cert">
-				<label for="other-languages" class="other">Other Languages</label>
-				<input type="text" id="other-languages" placeholder="Other Languages">
-			</div>
-			<div class="item other-skill-cert">
-				<label for="other-hobbies" class="other">Other Hobbies</label>
-				<input type="text" id="other-hobbies" placeholder="Other Hobbies">
-			</div>
-		</div>
 	</fieldset>
-
 	<fieldset>
 		<h2>Referees</h2>
 		<div class="wrapper">
@@ -437,7 +458,7 @@
 				<input type="tel" id="referee-phone-1">
 			</div>
 			<div class="item">
-				<label for="referee-email-1">Email Adress<span>*</span></label>
+				<label for="referee-email-1">Email Address<span>*</span></label>
 				<input type="email" id="referee-email-1">
 			</div>
 		</div>
@@ -455,7 +476,7 @@
 				<input type="tel" id="referee-phone-2">
 			</div>
 			<div class="item">
-				<label for="referee-email-2">Email Adress<span>*</span></label>
+				<label for="referee-email-2">Email Address<span>*</span></label>
 				<input type="email" id="referee-email-2">
 			</div>
 		</div>
@@ -473,7 +494,7 @@
 				<input type="tel" id="referee-phone-3">
 			</div>
 			<div class="item">
-				<label for="referee-email-3">Email Adress<span>*</span></label>
+				<label for="referee-email-3">Email Address<span>*</span></label>
 				<input type="email" id="referee-email-3">
 			</div>
 		</div>
@@ -481,10 +502,10 @@
 
 		<div class="wrapper">	
 			<div class="item">
-				<input type="submit" id="submit-button" value="Submit & View" class="btn decision">
+				<input type="submit" id="submit-button" value="Submit & View" class="decision">
 			</div>
 			<div class="item">
-				<input type="reset" id="reset-button" value="Reset" class="btn decision">
+				<input type="reset" id="reset-button" value="Reset" class="decision">
 			</div>
 		</div>
 
@@ -493,20 +514,17 @@
 
 
 <!--UI Display starts Here-->
-<button id="print-button">Print</button>
 <div class="display-container">
 		<header class="shadow">
-			<div id="image"></div>
+			<img src="" id="image">
 			<h1 class="title"></h1>
 			<p class="personal-address add"></p>
 			<p class="personal-phone add"></p>
 			<p class="personal-email add"></p>
 		</header>
 		<main>
-			<div>
-				<h2 class="sub-heading"></h2>
-				<p id="objectives"></p>
-			</div>
+			<h2 class="sub-heading"></h2>
+			<p id="objectives"></p>
 
 			<div class="personal-info">
 				<h2 class="info-heading"></h2>
@@ -523,26 +541,25 @@
 <!--Institution Attended with dates-->
 			<div>
 				<h2 class="sch-attended"></h2>
-
 				<div class="post">
 					<h3 id="tertiary2-head" class="sch-head"></h3>
 					<p id="tert2-sch"></p>
 
 				</div>
-			
+				<div>
+				<h2 class="sch-attended"></h2>
 				<div>
 					<h3 id="tertiary1-head" class="sch-head"></h3>
-					<p id="tert1-sch"></p>	
+					<p id="tert1-sch"></p>
+				
 				</div>
-
 				<div>
-					<h3 id="secondary-head" class="head"></h3>
+					<h2 id="secondary-head" class="head"></h2>
 					<p id="sec-sch"></p>
 					
 				</div>
-				
 				<div>
-					<h3 id="primary-head" class="sch-head"></h3>
+					<h2 id="primary-head" class="sch-head"></h2>
 					<p id="pri-sch"></p>
 					
 				</div>
@@ -601,15 +618,25 @@
 			</div>
 
 <!--Hobbies and Language-->
-			<div>
+			<div id="hobbies">
 				<h2 id="hobby-head"></h2>
-				<p id="hobby-item"></p>
-				
+				<p id="hobby-sport"></p>
+				<p id="hobby-read"></p>
+				<p id="hobby-swim"></p>
+				<p id="hobby-travel"></p>
+				<p id="hobby-games"></p>
+				<p id="hobby-friend"></p>
 			</div>
-			<div>
+			<div id="language">
 				<h2 id="lang-head"></h2>
-				<p id="lang-item"></p>
-				
+				<p id="lang-yoruba"></p>
+				<p id="lang-hausa"></p>
+				<p id="lang-igbo"></p>
+				<p id="lang-english"></p>
+				<p id="lang-french"></p>
+				<p id="lang-spanish"></p>
+				<p id="lang-german"></p>
+				<p id="lang-portugal"></p>
 			</div>
 
 			<div id="referees">
@@ -634,7 +661,7 @@
 				</div>
 			</div>
 		</main>
-<footer>
+	<footer>
 		<div class="footer">
 			<div class="social">
 				<ul>
@@ -646,23 +673,26 @@
 					<li><a href="https://www.skype.com/Horler408" target="_blank"><img src="../images/skype.png" title="skype"></a></li>
 				</ul>
 			</div>
-			<div class="copyright">
+			<div class="special copyright">
 				&copy;copyright HorlerTech 2020
 			</div>
 		</div>
-	</footer>
-<div>
-	<button class="print">Print</button>
-</div>
-	</div>
+		<div>
+			<button class="print">Print</button>
+		</div>
+	</footer>>
+
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 <script type="text/javascript" src ="./country/countries.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script type="text/javascript" src="js/currentTime.js"></script>
 
-<script type="text/javascript" src="jquery-3.4.1.min.js"></script>
-
-<script type="text/javascript" src="js/scriptQuery.js"></script>
+<script type="text/javascript" src="js/script.js"></script>
 
 </body>
 </html>

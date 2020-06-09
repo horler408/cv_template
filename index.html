@@ -23,6 +23,8 @@
 					<li><a href="#">|</a></li>
 					<li><a href="./jQueryVersion/indexQueryCV.html">Query CV</a></li>
 					<li><a href="#">|</a></li>
+					<li><a href="./Bootstrap_Copy/indexBoots.html">Bootstrap</a></li>
+					<li><a href="#">|</a></li>
 					<li><a href="./CV_hardcopy/sampleCV.html">Sample CV</a></li>
 					<li><a href="#">|</a></li>
 					<li><a href="./pages/blog.html">Blog</a></li>
@@ -47,16 +49,11 @@
 				<div id="hour" class="hour"></div>
 				<span id="digital-clock" class="digital-clock"></span>
 			</div>
+
+			<div class="form-container">
+				<button id="enter-button" class="btn-input">Get Statarted Here</button>
+			</div>
 		
-		<form class="form-container">
-			<div class="main-input">
-				<input type="text" name="fName" placeholder="Enter You Full Name" id="home-name" autocomplete="off" required>
-			</div>
-			<div class="btn-input">
-				<button id="enter-button">Continue</button>
-				<button id="reset-btn">Reset</button>
-			</div>
-		</form>
 		<h1 id="home-head"></h1>
 		<div class="content">
 			<p>This is to welcome you to our Curriculum Vitae (CV) buider's website, you can click on <a href="./CV_template/indexCV.html" target="_blank">CV Template</a> or <a href="./jQueryVersion/indexQueryCV.html" target="_blank">Query CV</a> tab on the menu bar to start your journey to buiding your professional resume. You can also check for the <a href="./CV_hardcopy/sampleCV.html" target="_blank">sample CV</a> by clicking the appropriate tab on the navigational bar. I hope you have a nice time navigating our site. Thanks</p> 
@@ -92,44 +89,35 @@
 	</footer>
 </div>
 	<script type="text/javascript">
-		const clockDiv = document.querySelector('.clock');
-		const input = document.getElementById('home-name');
-		const submitBtn = document.getElementById('enter-button');
-		const homeHead = document.getElementById('home-head');
-		const form = document.querySelector('.form-container');
-		const main = document.querySelector('main')
-		const para = document.querySelector('.content');
-		const menu = document.querySelector('.logo-nav')
+		
+			const homeHead = document.getElementById('home-head');
+			const clockDiv = document.querySelector('.clock');
+			const main = document.querySelector('main')
+			const para = document.querySelector('.content');
+			const menu = document.querySelector('.logo-nav');
+			const btnContainer = document.querySelector('.form-container');
+			const btn = document.getElementById('enter-button');
 
-		input.focus();
-
-		submitBtn.addEventListener('click', function(e) {
-			e.preventDefault();
-			
-			if (input.value !== ''){
-				form.style.display = 'none';
-				clockDiv.style.display = 'none';
-
-				let fullName = input.value;
-				fullName = fullName.toUpperCase();
-				let spacePos = fullName.indexOf(' ');
-				if (spacePos === -1) {
-					homeHead.textContent = "Hello, " + fullName;
+			btn.onclick = function() {
+				let name = prompt("Would you like to tell us your name?");
+				name = name.toUpperCase();
+				if (name === '') {
+					return
+				}
+				else if (name === null) {
+					alert("You Must Enter Your Name, Please try again")
+					return
 				}
 				else {
-					let fName = fullName.substring(0, spacePos);
+					homeHead.textContent = "Hello, " + name;
+					para.style.display = 'block';
+					menu.style.display = 'block';
 
-					homeHead.textContent = "Hello, " + fName + '!';	
+					clockDiv.style.display = 'none';
+					btnContainer.style.display = 'none'	
 				}
-				para.style.display = 'block';
-				menu.style.display = 'block';
 			}
-			else {
-				alert("Enter your Name to Continue");
-				window.location.href = "index.html";
-			}
-			
-		});
+
 		
 		alert("All information submitted on this site is solely for the view of the owner only. No part of this data is stored in any form of device or database as no database is used with this website. We therefore assure our user to disppel any fear of data exposure to third parties. Thanks for your understanding");
 
