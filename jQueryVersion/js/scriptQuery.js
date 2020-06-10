@@ -259,7 +259,14 @@ $(document).ready(() => {
 	$submitBtn.on('click', (e) => {
 		e.preventDefault();
 
-		if ($firstName.val() === '' ) {
+		if ($firstName.val() === '' || $lastName.val() === '' || $email.val() === '' || $phoneNo.val() === '' || $address.val() === '' || $careerObj.val() === ''
+		|| $dob.val() === '' || $pob.val() === '' || $sex.val() === '' || $status.val() === ''|| $country.val() === '' || $faith.val() === '' || $origin.val() === ''
+		|| $local.val() === '' || $primarySch.val() === '' || $priCert.val() === '' || $priStart.val() === '' || $priEnd.val() === '' || $secondarySch.val() === ''
+		|| $secCert.val() === '' || $secStart.val() === '' || $secEnd.val() === '' || $tertiary1.val() === '' || $tertiaryCert1.val() === '' || $course1.val() === ''
+		|| $grade1.val() === '' || $tert1Start.val() === '' || $tert1End.val() === '' || $workExp1.val() === '' || $pos1.val() === '' || $workStart1.val() === ''
+		|| $workExp2.val() === '' || $pos2.val() === '' || $workStart2.val() === '' || $refName1.val() === '' || $refName2.val() === '' 
+		|| $refName3.val() === '' || $refAddress1.val() === '' || $refAddress2.val() === '' || $refAddress3.val() === '' || $refPhone1.val() === '' 
+		|| $refPhone2.val() === '' || $refPhone3.val() === '' || $refEmail1.val() === '' || $refEmail2.val() === '' || $refEmail3.val() === '') {
 			
 			$error.show();
 			alert('Fill all necessary fields *');
@@ -413,15 +420,6 @@ $(document).ready(() => {
 
 
 populateCountries("country", "state");
-
-/*|| $lastName.val() === '' || $email.val() === '' || $phoneNo.val() === '' || $address.val() === '' || $careerObj.val() === ''
-		|| $dob.val() === '' || $pob.val() === '' || $sex.val() === '' || $status.val() === ''|| $country.val() === '' || $faith.val() === '' || $origin.val() === ''
-		|| $local.val() === '' || $primarySch.val() === '' || $priCert.val() === '' || $priStart.val() === '' || $priEnd.val() === '' || $secondarySch.val() === ''
-		|| $secCert.val() === '' || $secStart.val() === '' || $secEnd.val() === '' || $tertiary1.val() === '' || $tertiaryCert1.val() === '' || $course1.val() === ''
-		|| $grade1.val() === '' || $tert1Start.val() === '' || $tert1End.val() === '' || $workExp1.val() === '' || $pos1.val() === '' || $workStart1.val() === ''
-		|| $workExp2.val() === '' || $pos2.val() === '' || $workStart2.val() === '' || $refName1.val() === '' || $refName2.val() === '' 
-		|| $refName3.val() === '' || $refAddress1.val() === '' || $refAddress2.val() === '' || $refAddress3.val() === '' || $refPhone1.val() === '' 
-		|| $refPhone2.val() === '' || $refPhone3.val() === '' || $refEmail1.val() === '' || $refEmail2.val() === '' || $refEmail3.val() === ''*/
 
 
 //Function Definitions

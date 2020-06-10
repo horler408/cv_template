@@ -70,6 +70,7 @@ input[type=search] {
 
 .logo-nav ul li a {
     border-right: 10px;
+    font-size: 1.5em;
     line-height: 1.5;
     text-decoration: none;
     display: inline-block;

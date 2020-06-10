@@ -16,11 +16,8 @@ const addBtn = document.getElementById('add');
 const addExpBtn = document.getElementById('add-exp');
 const expHidden = document.querySelector('.exp');
 const hiddenPost = document.querySelector('.post');
-const work = document.getElementById('work');
-const workBtn = document.getElementById('work-button');
 const input = document.querySelectorAll('input');
 const printBtn = document.querySelector('.print');
-const timeStamp = document.getElementById('time-stamp');
 
 //Names Objects
 const firstName = document.getElementById('first-name');
@@ -300,15 +297,14 @@ submitBtn.addEventListener('click', (e) => {
 		|| workExp2.value === '' || pos2.value === '' || workStart2.value === '' || refName1.value === '' 
 		|| refName2.value === '' || refName3.value === '' || refAddress1.value === '' || refAddress2.value === '' || refAddress3.value === '' 
 		|| refPhone1.value === '' || refPhone2.value === '' || refPhone3.value === '' || refEmail1.value === '' || refEmail2.value === '' || refEmail3.value === '') {
-	
+
 	/*if (firstName.value === '' || lastName.value === ''){*/
 		alert('Fill all necessary fields *');
-		window.location.href = "indexCV.html";
+		window.location.href = "indexBoots.html";
 	}
 	else {
 		error.style.display = 'none';
 		footer.style.display = 'none';
-		timeStamp.style.display = 'none';
 		mainHeader.style.display = 'none';
  		form.style.display = 'none';
  		shadow.style.display = 'block';
@@ -317,7 +313,6 @@ submitBtn.addEventListener('click', (e) => {
 		
 		printBtn.addEventListener('click', () => {
 			shadow.classList.remove('shadow');
-			timeStamp.style.display = 'none';
 			printBtn.style.display = 'none';
 			window.print();
 		});
@@ -335,7 +330,6 @@ submitBtn.addEventListener('click', (e) => {
 		personalPhone.textContent = "Phone: " + phoneNo.value;
 		personalEmail.textContent = "Email: " + email.value;
 		personalAddress.textContent = address.value;
-		image.textContent = passport.value;
 
 //Career Objective Display
 		subHeading.textContent = 'CAREER OBJECTIVES';

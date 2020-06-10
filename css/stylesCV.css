@@ -71,6 +71,7 @@ input[type=search] {
 
 .logo-nav ul li a {
     border-right: 10px;
+    font-size: 1.5em;
     line-height: 1.5;
     text-decoration: none;
     display: inline-block;
@@ -96,7 +97,7 @@ label {
 	display: inline-block;
 }
 
-.container, .display-container {
+.display-container {
 	position: relative;
 	margin-top: 20px;
 }
@@ -208,6 +209,12 @@ p {
 	margin-left: 30px;
 }
 
+.infoMsg {
+  color: red;
+  text-align: center;
+  font-size: 18px;
+}
+
 .info {
 	color: white;
 	background-color: red;
@@ -240,6 +247,7 @@ span {
 	background-color: rgba(0,0,0,0.8);
 	margin-left: 0;
 }
+
 
 .shadow {
 	width: 100%;

@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>CV Template</title>
+	<title>Bootstrap CV Template</title>
 	<meta charset="utf-8">
 	<link rel="shortcut icon" type="image/x-icon" href="../images/logo.png">
+	<link rel="stylesheet" type="text/css" href="./styleBoots.css">
 	<link rel="stylesheet" type="text/css" href="bootstrapCSS.css">
 	
 </head>
 <body>
-<div>
+<!-- <div>
 	<button class="print">Print</button>
 </div>
-
+ -->
 	<header class="main-header">
 		<div class="header-wrapper">
 			<div class="logo-img"><img src="../images/logo.jpg" width="150px" height="200px"></div>
@@ -20,11 +21,11 @@
 				<ul>
 					<li id="home-bar"><a href="../index.html">Home</a></li>
 					<li><a href="#">|</a></li>
-					<li class="active"><a href="../CV_template/indexCV.html">CV Template</a></li>
+					<li><a href="../CV_template/indexCV.html">CV Template</a></li>
 					<li><a href="#">|</a></li>
 					<li><a href="../jQueryVersion/indexQueryCV.html">Query CV</a></li>
 					<li><a href="#">|</a></li>
-					<li><a href="#">Bootstrap</a></li>
+					<li class="active"><a href="#">Bootstrap</a></li>
 					<li><a href="#">|</a></li>
 					<li><a href="../CV_hardcopy/sampleCV.html">Sample CV</a></li>
 					<li><a href="#">|</a></li>
@@ -41,51 +42,56 @@
 	</header>
 
 <main>
-	<div id="time-stamp">
-	<h2>Current Time is: &nbsp <span id="time"></span></h2></div>
-
 	<form class="container">
 		<fieldset>
-			<div class="info" id="error-message">All fields with * are required</div>
-			<h2>Personal Information</h2>
-		<div class="wrapper">
-			<div class="form-group">
+			<div class="infoMsg my-2" id="error-message">All fields with * are required</div>
+			<h3 class="mt-2">Personal Information</h3>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
 				<label for="first-name">First Name<span>*</span></label>
 				<input type="text" class="form-control" id="first-name" placeholder="e.g Adisa">
 			</div>
-			<div class="form-group">
+			<div class="form-group col-12 col-lg-6">
 				<label for="middle-name">Middle Name<span>*</span></label>
 				<input type="text" class="form-control" id="middle-name" placeholder="e.g Muhammad">
 			</div>
-			<div class="form-group">
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
 				<label for="last-name">Last Name<span>*</span></label>
 				<input type="text" class="form-control" id="last-name" placeholder="e.g Buhari">
 			</div>
-			<div class="form-group">
+			<div class="form-group col-12 col-lg-6">
 				<label for="contact-address">Contact Address<span>*</span></label>
 				<input type="text" class="form-control" id="contact-address" placeholder="e.g 5, Mafoluku street, Surulere, Lagos state">
 			</div>
-			<div class="form-group">
+		</div>
+		<div class="form-group">
+				<label for=career-objectives>Career Objectives<span>*</span></label>
+				<textarea id="career-objectives" class="form-control" cols="30" rows=""></textarea> 
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
 				<label for="phone-number">Phone Number<span>*</span></label>
 				<input type="tel" class="form-control" id="phone-number">
 			</div>
-			<div class="form-group">
+			<div class="form-group col-12 col-lg-6">
 				<label for="email-address">Email<span>*</span></label>
 				<input type="Email" name="emailAdd" id="email-address" class="form-control" multiple>
 			</div>
-			<div class="form-group">
-				<label for=career-objectives>Career Objectives<span>*</span></label>
-				<textarea id="career-objectives" class="form-control" cols="30" rows=""></textarea> 
-			</div>
-			<div class="form-group">
+		</div>	
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
 				<label for="dob">Date of birth<span>*</span></label>
 				<input type="date" name="" id="dob" class="form-control">
 			</div>
-			<div class="form-group">
+			<div class="form-group col-12 col-lg-6">
 				<label for="pob">Place of birth<span>*</span></label>
 				<input type="text" name="" id="pob" class="form-control">
 			</div>
-			<div class="form-group">
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
 				<label for="gender">Gender<span>*</span></label>
 				<select id="gender" class="form-control">
 					<option value="none">--Select--</option>
@@ -93,7 +99,7 @@
 					<option value="Female">Female</option>
 				</select>
 			</div>
-			<div class="form-group">
+			<div class="form-group col-12 col-lg-6">
 				<label for="status">Marital Status<span>*</span></label>
 				<select id="status" class="form-control">
 					<option value="none">-Choose--</option>
@@ -102,83 +108,95 @@
 					<option value="Divorced">Divorced</option>
 				</select>
 			</div>
-			<div class="form-group">
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
 				<label for="country">Nationalty<span>*</span></label>
 				<select type="text" id="country" class="form-control" name="country"></select>
 			</div>
-			<div class="form-group">
-				<label for="faith">Religion<span>*</span></label>
-				<input type="text" id="faith" class="form-control">
-			</div>
-			<div class="form-group">
+			<div class="form-group col-12 col-lg-6">
 				<label for="state">State of origin<span>*</span></label>
 				<select type="text" name="state" id="state" class="form-control"></select>
 			</div>
-			<div class="form-group">
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
 				<label for="local">Local Government<span>*</span></label>
 				<input type="text" name="" id="local" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="faith">Religion<span>*</span></label>
+				<input type="text" id="faith" class="form-control">
 			</div>
 		</div>
 	</fieldset>
 
 	<fieldset>
-		<h2>Education History</h2>
-		<div class="wrapper">
-			<div class="item">
+		<h3 class="mt-2">Education History</h3>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
 					<label>Primary School Attended<span>*</span></label>
-					<input type="text" id="primary">
+					<input type="text" id="primary" class="form-control">
 			</div>
-
-			<div class="item">
+			<div class="form-group col-12 col-lg-6">
 				<label for="primary-cert">Certificate Obtained<span>*</span></label>
-				<select id="primary-cert">
+				<select id="primary-cert" class="form-control">
 					<option>None</option>
 					<option>Senior School Certificate Examination</option>
 					<option>Interim Joint Matriculation Board</option>
 					<option>School leaving Certificate</option>
 				</select>
 			</div>
-			<div class="item">
-					<label for="pri-start-date">Start date<span>*</span></label>
-					<input type="date" id="pri-start-date">
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="pri-start-date">Start date<span>*</span></label>
+				<input type="date" id="pri-start-date" class="form-control">
 			</div>
-			<div class="item">
-					<label for="pri-end-date">End date<span>*</span></label>
-					<input type="date" id="pri-end-date">
+			<div class="form-group col-12 col-lg-6">
+				<label for="pri-end-date">End date<span>*</span></label>
+				<input type="date" id="pri-end-date" class="form-control">
 			</div>
-			
-			<div class="item">
-					<label>Secondary School Attended<span>*</span></label>
-					<input type="text" id="secondary">
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label>Secondary School Attended<span>*</span></label>
+				<input type="text" id="secondary" class="form-control">
 			</div>
-			<div class="item">
+			<div class="form-group col-12 col-lg-6">
 				<label for="secondary-cert">Certificate Obtained<span>*</span></label>
-				<select id="secondary-cert">
+				<select id="secondary-cert" class="form-control">
 					<option>None</option>
 					<option>Senior School Certificate Examination</option>
 					<option>Interim Joint Matriculation Board</option>
 					<option>School leaving Certificate</option>
 				</select>
 			</div>
-			<div class="item">
-					<label for="sec-start-date">Start date<span>*</span></label>
-					<input type="date" id="sec-start-date">
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="sec-start-date">Start date<span>*</span></label>
+				<input type="date" id="sec-start-date" class="form-control">
 			</div>
-			<div class="item">
+			<div class="form-group col-12 col-lg-6">
 					<label for="sec-end-date">End date<span>*</span></label>
-					<input type="date" id="sec-end-date">
+					<input type="date" id="sec-end-date" class="form-control">
 			</div>
-			<div class="item">
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
 					<label for="tertiary1">University/Polytechnic Attended<span>*</span></label>
-					<input type="text" id="tertiary1">
+					<input type="text" id="tertiary1" class="form-control">
 			</div>
-			<div class="item">
+			<div class="form-group col-12 col-lg-6">
 					<label for="course1">Course of Study<span>*</span></label>
-					<input type="text" id="course1">
+					<input type="text" id="course1" class="form-control">
 			</div>
-			<div class="item">
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
 				<label for="tert1-cert">Certificate Obtained<span>*</span></label>
-				<select id="tert1-cert">
+				<select id="tert1-cert" class="form-control">
 					<option>None</option>
 					<option>Msc</option>
 					<option>Bsc</option>
@@ -187,9 +205,9 @@
 					<option>OND</option>
 				</select>
 			</div>
-			<div class="item">
+			<div class="form-group col-12 col-lg-6">
 				<label for="tert1-grade">Grade Obtained<span>*</span></label>
-				<select id="tert1-grade">
+				<select id="tert1-grade" class="form-control">
 					<option>None</option>
 					<option>First Class</option>
 					<option>Second Class(upper division)</option>
@@ -200,150 +218,166 @@
 					<option>Pass</option>
 				</select>
 			</div>
-			<div class="item">
-					<label for="t1-start-date">Start date<span>*</span></label>
-					<input type="date" id="t1-start-date">
-			</div>
-			<div class="item">
-					<label for="t1-end-date">End date<span>*</span></label>
-					<input type="date" id="t1-end-date">
-			</div>
-			<div class="edit">
-				<input type="button" value="Add+" name="addBtn" id="add">
-			</div>
 		</div>
-		<div class="post wrapper">
-			<div class="item">
-					<label for="tertiary2">Other Certificate Obtained<span>*</span></label>
-					<input type="text" id="tertiary2">
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="t1-start-date">Start date<span>*</span></label>					<input type="date" id="t1-start-date" class="form-control">
 			</div>
-			<div class="item">
-					<label for="course2">Course of Study<span>*</span></label>
-					<input type="text" id="course2">
-			</div>
-			<div class="item">
-				<label for="tert2-cert">Certificate Obtained<span>*</span></label>
-				<select id="tert2-cert">
-					<option>None</option>
-					<option>Phd</option>
-					<option>Msc</option>
-					<option>Bsc</option>
-					<option>B.eng</option>
-					<option>HND</option>
-					<option>OND</option>
-				</select>
-			</div>
-			<div class="item">
-				<label for="tert2-grade">Grade Obtained<span>*</span></label>
-				<select id="tert2-grade">
-					<option value="">None</option>
-					<option value="First Class">First Class</option>
-					<option value="Second Class(Upper)">Second Class(upper division)</option>
-					<option value="Second Class(lower)">Second Class(lower division)</option>
-					<option value="distinction">Distinction</option>
-					<option value="upper credit">Upper Credit</option>
-					<option value="lower credit">Lower Credit</option>
-					<option>Pass</option>
-				</select>
-			</div>
-			<div class="item">
-					<label for="t2-start-date">Start date<span>*</span></label>
-					<input type="date" id="t2-start-date">
-			</div>
-			<div class="item">
-					<label for="t2-end-date">End date<span>*</span></label>
-					<input type="date" id="t2-end-date">
-			</div>
-		</div>
-	</fieldset>
-
-		<fieldset>
-		<h2>Employment History</h2>
-		<div class="wrapper" id="work">
-			<div class="item">
-				<label for="work-1">Name and address of Organisation 1<span>*</span></label>
-				<input type="text" id="work-1">
-			</div>
-			<div class="item">
-				<label for="pos-1">Position Held<span>*</span></label>
-				<input type="text" id="pos-1">
-			</div>
-			<div class="item">
-				<label for="work-start-1">Start date<span>*</span></label>
-				<input type="date" id="work-start-1">
-			</div>
-			<div class="item">
-				<label for="work-end-1">End date<span>*</span></label>
-				<input type="date" id="work-end-1">
-			</div>
-		</div>
-
-		<div class="wrapper">
-			<div class="item">
-				<label for="work-2">Name and address of Organisation 2<span>*</span></label>
-				<input type="text" id="work-2">
-			</div>
-			<div class="item">
-				<label for="pos-2">Position Held<span>*</span></label>
-				<input type="text" id="pos-2">
-			</div>
-			<div class="item">
-				<label for="work-start-2">Start date<span>*</span></label>
-				<input type="date" id="work-start-2">
-			</div>
-			<div class="item">
-				<label for="work-end-2">End date</label>
-				<input type="date" id="work-end-2">
-			</div>
-		</div>
-
-		<div class="wrapper">
-			<div class="item">
-				<label for="work-3">Name and address of Organisation 3<span>*</span></label>
-				<input type="text" id="work-3">
-			</div>
-			<div class="item extra" >
-				<label for="pos-3">Position Held</label>
-				<input type="text" id="pos-3">
-			</div>
-			<div class="item">
-				<label for="work-start-3">Start date</label>
-				<input type="date" id="work-start-3">
-			</div>
-			<div class="item">
-				<label for="work-end-3">End date</label>
-				<input type="date" id="work-end-3">
+			<div class="form-group col-12 col-lg-6">
+				<label for="t1-end-date">End date<span>*</span></label>
+				<input type="date" id="t1-end-date" class="form-control">
 			</div>
 		</div>
 		<div class="edit">
-				<input type="button" value="Add+" name="addBtn" id="add-exp">
+			<input type="button" value="Add+" class="btn btn-primary" id="add">
 		</div>
-		<div class="wrapper exp">
-			<div class="item">
-				<label for="work-4">Name and address of Organisation 4</label>
-				<input type="text" id="work-4">
+		</div>
+		<div class="post">
+			<div class="row">
+				<div class="form-group col-12 col-lg-6">
+					<label for="tertiary2">Other Certificate Obtained<span>*</span></label>
+					<input type="text" id="tertiary2" class="form-control">
+				</div>
+				<div class="form-group col-12 col-lg-6">
+					<label for="course2">Course of Study<span>*</span></label>
+					<input type="text" id="course2" class="form-control">
+				</div>
 			</div>
-			<div class="item extra">
-				<label for="pos-4">Position Held</label>
-				<input type="text" id="pos-4">
+			<div class="row">
+				<div class="form-group col-12 col-lg-6">
+					<label for="tert2-cert">Certificate Obtained<span>*</span></label>
+					<select id="tert2-cert" class="form-control">
+						<option>None</option>
+						<option>Phd</option>
+						<option>Msc</option>
+						<option>Bsc</option>
+						<option>B.eng</option>
+						<option>HND</option>
+						<option>OND</option>
+					</select>
+				</div>
+				<div class="form-group col-12 col-lg-6">
+					<label for="tert2-grade">Grade Obtained<span>*</span></label>
+					<select id="tert2-grade" class="form-control">
+						<option value="">None</option>
+						<option value="First Class">First Class</option>
+						<option value="Second Class(Upper)">Second Class(upper division)</option>
+						<option value="Second Class(lower)">Second Class(lower division)</option>
+						<option value="distinction">Distinction</option>
+						<option value="upper credit">Upper Credit</option>
+						<option value="lower credit">Lower Credit</option>
+						<option>Pass</option>
+					</select>
+				</div>
 			</div>
-			<div class="item">
-				<label for="work-start-4">Start date</label>
-				<input type="date" id="work-start-4">
-			</div>
-			<div class="item">
-				<label for="work-end-4">End date</label>
-				<input type="date" id="work-end-4">
+			<div class="row">
+				<div class="form-group col-12 col-lg-6">
+					<label for="t2-start-date">Start date<span>*</span></label>
+					<input type="date" id="t2-start-date" class="form-control">
+				</div>
+				<div class="form-group col-12 col-lg-6">
+					<label for="t2-end-date">End date<span>*</span></label>
+					<input type="date" id="t2-end-date" class="form-control">
+				</div>
 			</div>
 		</div>
 	</fieldset>
 
 	<fieldset>
-		<h2>Skills and Certification</h2>
-		<div class="wrapper">
-			<div class="item skill-cert">
+		<h3 class="mt-2">Employment History</h3>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="work-1">Name and address of Organisation 1<span>*</span></label>
+				<input type="text" id="work-1" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="pos-1">Position Held<span>*</span></label>
+				<input type="text" id="pos-1" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="work-start-1">Start date<span>*</span></label>
+				<input type="date" id="work-start-1" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="work-end-1">End date<span>*</span></label>
+				<input type="date" id="work-end-1" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="work-2">Name and address of Organisation 2<span>*</span></label>
+				<input type="text" id="work-2" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="pos-2">Position Held<span>*</span></label>
+				<input type="text" id="pos-2" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="work-start-2">Start date<span>*</span></label>
+				<input type="date" id="work-start-2" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="work-end-2">End date</label>
+				<input type="date" id="work-end-2" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="work-3">Name and address of Organisation 3<span>*</span></label>
+				<input type="text" id="work-3" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="pos-3">Position Held</label>
+				<input type="text" id="pos-3" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="work-start-3">Start date</label>
+				<input type="date" id="work-start-3" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="work-end-3">End date</label>
+				<input type="date" id="work-end-3" class="form-control">
+			</div>
+		</div>
+		<div class="edit">
+				<input type="button" value="Add+" id="add-exp" class="btn btn-primary">
+		</div>
+		<div class="exp">
+			<div class="row">
+				<div class="form-group col-12 col-lg-6">
+					<label for="work-4">Name and address of Organisation 4</label>
+					<input type="text" id="work-4" class="form-control">
+				</div>
+				<div class="form-group col-12 col-lg-6">
+					<label for="pos-4">Position Held</label>
+					<input type="text" id="pos-4" class="form-control">
+				</div>
+			</div>
+			<div class="row">
+				<div class="form-group col-12 col-lg-6">
+					<label for="work-start-4">Start date</label>
+					<input type="date" id="work-start-4" class="form-control">
+				</div>
+				<div class="form-group col-12 col-lg-6">
+					<label for="work-end-4">End date</label>
+					<input type="date" id="work-end-4" class="form-control">
+				</div>
+			</div>
+		</div>
+	</fieldset>
+
+	<fieldset>
+		<h3 class="mt-2">Skills and Certification</h3>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
 				<label>Technical Skills</label>
-				<select multiple id="technical-skills">
+				<select class="form-control" multiple id="technical-skills">
 					<option value="">--Select--</option>
 					<option value="Windows Appreciation">Window Appreciation</option>
 					<option value="Desktop Publishing">Desktop Publishing</option>
@@ -357,9 +391,9 @@
 					<option value="Android development">Mobile App</option>
 				</select>
 			</div>
-			<div class="item skill-cert">
+			<div class="form-group col-12 col-lg-6">
 				<label>Certification</label>
-				<select multiple id="skills-certification">
+				<select id="skills-certification" class="form-control" multiple>
 					<option value="">--Select--</option>
 					<option value="CCNA">CCNA</option>
 					<option value="CCNP">CCNP</option>
@@ -369,144 +403,181 @@
 					<option value="Linux Certification">Linus Plus</option>
 				</select>
 			</div>
-			<div class="item other-skill-cert">
-				<label for="other-skills" class="other">Other skills not specified</label>
-				<input type="text" id="other-skills" placeholder="Other skills">
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="other-skills">Other skills not specified</label>
+				<input type="text" id="other-skills" placeholder="Other Skills" class="form-control">
 			</div>
-			<div class="item other-skill-cert">
+			<div class="form-group col-12 col-lg-6">
 				<label for="other-cert" class="other">Other Certification</label>
-				<input type="text" id="other-cert" placeholder="Other certifications">
-			</div>
-		</div>
-	</fieldset>
-	<fieldset>
-		<h2>hobbies and Language Spoken</h2>
-		<div class="wrapper">
-				<div>
-					<input type="checkbox" name="sports" value="Sports" id="sports" class="check">
-					<label for="sports" class="check-label">Sports</label>
-				</div>
-				<div>
-					<input type="checkbox" name="reading" value="Reading" id="reading" class="check">
-					<label for="reading" class="check-label">Reading</label>
-				</div>
-				<div>
-					<input type="checkbox" name="swimming" value="Swimming" id="swimming" class="check">
-					<label for="swimming" class="check-label">Swimming</label>
-				</div>
-				<div>
-					<input type="checkbox" name="games" value="Video Games" id="games" class="check">
-					<label for="games" class="check-label">Video Games</label>
-				</div>
-				<div>
-					<input type="checkbox" name="traveling" value="Traveling" id="traveling" class="check">
-					<label for="traveling" class="check-label">Travelling</label>
-				</div>
-				<div>
-					<input type="checkbox" name="meeting" value="Making Friends" id="meeting" class="check">
-					<label for="meeting" class="check-label">Making Friends</label>
-				</div>
-			</div>
-			<div class="wrapper">
-				<div>
-					<input type="checkbox" name="yoruba" value="Yoruba" id="yoruba" class="check">
-					<label for="yoruba" class="check-label">Yoruba</label>
-				</div>
-				<div>
-					<input type="checkbox" name="hausa" value="Hausa" id="hausa" class="check">
-					<label for="hausa" class="check-label">Hausa</label>
-				</div>
-				<div>
-					<input type="checkbox" name="igbo" value="Igbo" id="igbo" class="check">
-					<label for="igbo" class="check-label">Igbo</label>
-				</div>
-				<div>
-					<input type="checkbox" name="english" value="English" id="english" class="check">
-					<label for="english" class="check-label">English</label>
-				</div>
-				<div>
-					<input type="checkbox" name="french" value="French" id="french" class="check">
-					<label for="french" class="check-label">French</label>
-				</div>
-				<div>
-					<input type="checkbox" name="german" value="German" id="german" class="check">
-					<label for="german" class="check-label">German</label>
-				</div>
-				<div>
-					<input type="checkbox" name="portuguese" value="Portuguese" id="portuguese" class="check">
-					<label for="portuguese" class="check-label">Portuguese</label>
-				</div>
-				<div>
-					<input type="checkbox" name="spanish" value="Spanish" id="spanish" class="check">
-					<label for="spanish" class="check-label">Spanish</label>
-				</div>
-			</div>
-	</fieldset>
-	<fieldset>
-		<h2>Referees</h2>
-		<div class="wrapper">
-			<div class="item">
-				<label for="referee-1">Name of Referee<span>*</span></label>
-				<input type="text" id="referee-1">
-			</div>
-			<div class="item">
-				<label for="referee-address-1">Address of Referee<span>*</span></label>
-				<input type="text" id="referee-address-1">
-			</div>
-			<div class="item">
-				<label for="referee-phone-1">Phone Number<span>*</span></label>
-				<input type="tel" id="referee-phone-1">
-			</div>
-			<div class="item">
-				<label for="referee-email-1">Email Address<span>*</span></label>
-				<input type="email" id="referee-email-1">
-			</div>
-		</div>
-		<div class="wrapper">
-			<div class="item">
-				<label for="referee-2">Name of Referee<span>*</span></label>
-				<input type="text" id="referee-2">
-			</div>
-			<div class="item">
-				<label for="referee-address-2">Address of Referee<span>*</span></label>
-				<input type="text" id="referee-address-2">
-			</div>
-			<div class="item">
-				<label for="referee-phone-2">Phone Number<span>*</span></label>
-				<input type="tel" id="referee-phone-2">
-			</div>
-			<div class="item">
-				<label for="referee-email-2">Email Address<span>*</span></label>
-				<input type="email" id="referee-email-2">
-			</div>
-		</div>
-		<div class="wrapper">
-			<div class="item">
-				<label for="referee-3">Name of Referee<span>*</span></label>
-				<input type="text" id="referee-3">
-			</div>
-			<div class="item">
-				<label for="referee-address-3">Address of Referee<span>*</span></label>
-				<input type="text" id="referee-address-3">
-			</div>
-			<div class="item">
-				<label for="referee-phone-3">Phone Number<span>*</span></label>
-				<input type="tel" id="referee-phone-3">
-			</div>
-			<div class="item">
-				<label for="referee-email-3">Email Address<span>*</span></label>
-				<input type="email" id="referee-email-3">
+				<input type="text" id="other-cert" placeholder="Other Certifications" class="form-control">
 			</div>
 		</div>
 	</fieldset>
 
-		<div class="wrapper">	
-			<div class="item">
-				<input type="submit" id="submit-button" value="Submit & View" class="decision">
+	<fieldset>
+		<div class="row">
+			<div class="col-12 col-lg-6">
+				<h3 class="mt-2">hobbies</h3>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" name="sports" value="Sports" id="sports" class="form-check-input">
+					<label for="sports" class="form-check-label">Sports</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="Reading" id="reading" class="form-check-input">
+					<label for="reading" class="form-check-label">Reading</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="Swimming" id="swimming" class="form-check-input">
+					<label for="swimming" class="form-check-label">Swimming</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="Video Games" id="games" class="form-check-input">
+					<label for="games" class="form-check-label">Video Games</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" name="traveling" value="Traveling" id="traveling" class="form-check-input">
+					<label for="traveling" class="form-check-label">Travelling</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="Making Friends" id="meeting" class="form-check-input">
+					<label for="meeting" class="form-check-label">Making Friends</label>
+					</div>
+				</div>
 			</div>
-			<div class="item">
-				<input type="reset" id="reset-button" value="Reset" class="decision">
+			<div class="col-12 col-lg-6">
+				<h3 class="mt-2">Language Spoken</h3>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="Yoruba" id="yoruba" class="form-check-input">
+					<label for="yoruba" class="form-check-label">Yoruba</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="Hausa" id="hausa" class="form-check-input">
+					<label for="hausa" class="form-check-label">Hausa</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="Igbo" id="igbo" class="form-check-input">
+					<label for="igbo" class="form-check-label">Igbo</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="English" id="english" class="form-check-input">
+					<label for="english" class="form-check-label">English</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="French" id="french" class="form-check-input">
+					<label for="french" class="form-check-label">French</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="German" id="german" class="form-check-input">
+					<label for="german" class="form-check-label">German</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="Portuguese" id="portuguese" class="form-check-input">
+					<label for="portuguese" class="form-check-label">Portuguese</label>
+					</div>
+				</div>
+				<div class="form-group">
+					<div class="form-check">
+					<input type="checkbox" value="Spanish" id="spanish" class="form-check-input">
+					<label for="spanish" class="form-check-label">Spanish</label>
+					</div>
+				</div>
 			</div>
+		</div>
+	</fieldset>
+	<fieldset>
+		<h3 class="mt-2">Referees</h2>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-1">Name of Referee<span>*</span></label>
+				<input type="text" id="referee-1" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-address-1">Address of Referee<span>*</span></label>
+				<input type="text" id="referee-address-1" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-phone-1">Phone Number<span>*</span></label>
+				<input type="tel" id="referee-phone-1" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-email-1">Email Address<span>*</span></label>
+				<input type="email" id="referee-email-1" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-2">Name of Referee<span>*</span></label>
+				<input type="text" id="referee-2" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-address-2">Address of Referee<span>*</span></label>
+				<input type="text" id="referee-address-2" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-phone-2">Phone Number<span>*</span></label>
+				<input type="tel" id="referee-phone-2" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-email-2">Email Address<span>*</span></label>
+				<input type="email" id="referee-email-2" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-3">Name of Referee<span>*</span></label>
+				<input type="text" id="referee-3" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-address-3">Address of Referee<span>*</span></label>
+				<input type="text" id="referee-address-3" class="form-control">
+			</div>
+		</div>
+		<div class="row">
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-phone-3">Phone Number<span>*</span></label>
+				<input type="tel" id="referee-phone-3" class="form-control">
+			</div>
+			<div class="form-group col-12 col-lg-6">
+				<label for="referee-email-3">Email Address<span>*</span></label>
+				<input type="email" id="referee-email-3" class="form-control">
+			</div>
+		</div>
+	</fieldset>
+		<div class="row">
+			<button type="submit" id="submit-button" class="btn btn-success col-12 col-lg-6 my-4 font-weight-bolder">Submit & View
+			</button>
+			<button type="reset" id="reset-button" class="btn btn-dark col-12 col-lg-6 my-4 font-weight-bolder">Reset
+			</button>
 		</div>
 
 	</form>
@@ -514,20 +585,19 @@
 
 
 <!--UI Display starts Here-->
-<div class="display-container">
+	<div class="display-container">
 		<header class="shadow">
-			<img src="" id="image">
-			<h1 class="title"></h1>
+			<h4 class="title"></h4>
 			<p class="personal-address add"></p>
 			<p class="personal-phone add"></p>
 			<p class="personal-email add"></p>
 		</header>
 		<main>
-			<h2 class="sub-heading"></h2>
+			<h5 class="sub-heading py-1"></h5>
 			<p id="objectives"></p>
 
 			<div class="personal-info">
-				<h2 class="info-heading"></h2>
+				<h5 class="info-heading py-1"></h5>
 				<p id="info-item1"></p>
 				<p id="info-item2"></p>
 				<p id="info-item3"></p>
@@ -540,26 +610,26 @@
 
 <!--Institution Attended with dates-->
 			<div>
-				<h2 class="sch-attended"></h2>
+				<h5 class="sch-attended py-1"></h5>
 				<div class="post">
-					<h3 id="tertiary2-head" class="sch-head"></h3>
+					<h5 id="tertiary2-head" class="sch-head"></h5>
 					<p id="tert2-sch"></p>
 
 				</div>
 				<div>
-				<h2 class="sch-attended"></h2>
+				<h5 class="sch-attended py-1"></h5>
 				<div>
-					<h3 id="tertiary1-head" class="sch-head"></h3>
+					<h5 id="tertiary1-head" class="sch-head"></h5>
 					<p id="tert1-sch"></p>
 				
 				</div>
 				<div>
-					<h2 id="secondary-head" class="head"></h2>
+					<h5 id="secondary-head" class="head py-1"></h5>
 					<p id="sec-sch"></p>
 					
 				</div>
 				<div>
-					<h2 id="primary-head" class="sch-head"></h2>
+					<h5 id="primary-head" class="sch-head py-1"></h5>
 					<p id="pri-sch"></p>
 					
 				</div>
@@ -567,7 +637,7 @@
 
 <!--Qualification Obtained with dates-->
 			<div>
-				<h2 id="qualification" class="heading"></h2>
+				<h5 id="qualification" class="heading py-1"></h5>
 				<div>
 					<p id="tert2-qual" class="post"></p>
 				</div>
@@ -584,7 +654,7 @@
 
 <!--Working Experience with dates-->
 			<div>
-				<h2 id="experience-title" class="heading"></h2>
+				<h5 id="experience-title" class="heading py-1"></h5>
 				<div id="experience-1" class="head">
 					<p id="exp-1"></p>
 					<p id="role-1"></p>
@@ -609,17 +679,17 @@
 
 <!--Skills and Certification-->
 			<div>
-				<h2 id="skills"></h2>
+				<h5 id="skills" class="py-1"></h5>
 				<p id="skill-item"></p>
 			</div>
 			<div>
-				<h2 id="cert"></h2>
+				<h5 id="cert" class="py-1"></h5>
 				<p id="cert-item"></p>
 			</div>
 
 <!--Hobbies and Language-->
 			<div id="hobbies">
-				<h2 id="hobby-head"></h2>
+				<h5 id="hobby-head" class="=py-1"></h5>
 				<p id="hobby-sport"></p>
 				<p id="hobby-read"></p>
 				<p id="hobby-swim"></p>
@@ -628,7 +698,7 @@
 				<p id="hobby-friend"></p>
 			</div>
 			<div id="language">
-				<h2 id="lang-head"></h2>
+				<h5 id="lang-head" class="py-1"></h5>
 				<p id="lang-yoruba"></p>
 				<p id="lang-hausa"></p>
 				<p id="lang-igbo"></p>
@@ -640,7 +710,7 @@
 			</div>
 
 			<div id="referees">
-				<h2 id="referee-head"></h2>
+				<h5 id="referee-head" class="py-1"></h5>
 				<div id="referee-1">
 					<p id="referee-1-name" class="referee"></p>
 					<p id="referee-1-add"></p>
@@ -661,6 +731,7 @@
 				</div>
 			</div>
 		</main>
+	</div>
 	<footer>
 		<div class="footer">
 			<div class="social">
@@ -680,19 +751,18 @@
 		<div>
 			<button class="print">Print</button>
 		</div>
-	</footer>>
-
+	</footer>
+</div>
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-<script type="text/javascript" src ="./country/countries.js"></script>
+<script type="text/javascript" src ="./js/countries.js"></script>
 
-<script type="text/javascript" src="js/currentTime.js"></script>
-
-<script type="text/javascript" src="js/script.js"></script>
-
+<script type="text/javascript" src="./js/script.js"></script>
+<!-- <script type="text/javascript" src="../CV_template/js/script.js"></script>
+ -->
 </body>
 </html>
