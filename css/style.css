@@ -146,8 +146,7 @@ input[type=search] {
 
 .form-container {
     position: relative;
-    width: 60%;
-    left: 33%;
+    left: 10%;
     top: 50%;
 }
 
@@ -185,7 +184,7 @@ input[type=search] {
     width: 30%;
     height: 50px;
     margin: 10px;
-    background-color: transparent;
+    background-color: white;
     font-size: 20px;
     font-weight: bolder;
     border-radius: 5px;
