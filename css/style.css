@@ -53,7 +53,6 @@ input[type=search] {
 .logo-img img {
     border-radius: 50%;
     float: left;
-    max-width: 100%;
     height: auto;
     margin: 15px;
 }
@@ -146,7 +145,7 @@ input[type=search] {
 
 .form-container {
     position: relative;
-    left: 10%;
+    left: 20%;
     top: 50%;
 }
 
@@ -391,7 +390,7 @@ textarea:focus {
 
 @media screen and (max-width: 1024px) {
   body {
-    font-size: 24px;
+    font-size: 18px;
     font-family: "Poppins", sans-serif;
   }
 
@@ -413,10 +412,7 @@ textarea:focus {
   }
 
   .calc {
-    margin-top: -250px;
+    margin-top: -100px;
   } 
     
-  .main {
-    min-height: 100vh;
-  }
 }
