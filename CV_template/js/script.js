@@ -5,7 +5,7 @@ function testPage() {
 
 //testPage();
 */
-
+import * as F from './functions.js';
 
 /*Getting DOM Objects from Forms*/
 const footer = document.querySelector('footer');
@@ -372,11 +372,11 @@ submitBtn.addEventListener('click', (e) => {
 		
 
 		tert1Head.textContent = 'Tertiary Education1';
-		education(tert1Sch, tertiarySch1, tert1Start, tert1End);
+		F.education(tert1Sch, tertiarySch1, tert1Start, tert1End);
 		
 		//Secondary School Display
 		secHead.textContent = 'Secondary Education';
-		education(secSch, secondarySch, secStart, secEnd); 
+		F.education(secSch, secondarySch, secStart, secEnd); 
 		
 		//Primary School Display
 		priHead.textContent = 'Primary Education';
@@ -388,65 +388,65 @@ submitBtn.addEventListener('click', (e) => {
 		qualificationHead.classList.add('displayHead');
 
 		//Tertiary Qualification Display
-		eduQualification(tert1Qualification, tertiaryCert1, course1, grade1, tert1Start, tert1End);
-		eduQualification(tert2Qualification, tertiaryCert2, course2, grade2, tert2Start, tert2End);
+		F.eduQualification(tert1Qualification, tertiaryCert1, course1, grade1, tert1Start, tert1End);
+		F.eduQualification(tert2Qualification, tertiaryCert2, course2, grade2, tert2Start, tert2End);
 
 
-		eduQualification(secQualification, secCert, secStart, secEnd);
-		eduQualification(priQualification, priCert, priStart, priEnd);
+		F.eduQualification(secQualification, secCert, secStart, secEnd);
+		F.eduQualification(priQualification, priCert, priStart, priEnd);
 	
 //Working Experience
 		expTitle.textContent = 'WORKING EXPERIENCE WITH DATES';
 		expTitle.classList.add('displayHead');
 
-		workExperience(work1, workExp1, role1, pos1, workDate1, workStart1, workEnd1);
-		workExperience(work2, workExp2, role2, pos2, workDate2, workStart2, workEnd2);
-		workExperience(work3, workExp3, role3, pos3, workDate3, workStart3, workEnd3);
-		workExperience(work4, workExp4, role4, pos4, workDate4, workStart4, workEnd4);
+		F.workExperience(work1, workExp1, role1, pos1, workDate1, workStart1, workEnd1);
+		F.workExperience(work2, workExp2, role2, pos2, workDate2, workStart2, workEnd2);
+		F.workExperience(work3, workExp3, role3, pos3, workDate3, workStart3, workEnd3);
+		F.workExperience(work4, workExp4, role4, pos4, workDate4, workStart4, workEnd4);
 		
 //Skills and Certification
 		skillTitle.textContent = 'TECHNICAL SKILLS ACQUIRED';
 		skillTitle.classList.add('displayHead');
 
-		skill_cert(technicalSkills, skillsAcquired, otherSkills, "No technical skill acquired");
+		F.skill_cert(technicalSkills, skillsAcquired, otherSkills, "No technical skill acquired");
 
 		certTitle.textContent = 'PROFESSIONAL CERTIFICATION';
 		certTitle.classList.add('displayHead');
 
-		skill_cert(technicalCert, skillsCert, otherCert, "No Professional certificate obtained");
+		F.skill_cert(technicalCert, skillsCert, otherCert, "No Professional certificate obtained");
 		
 
 //Hobbies CheckBox
 		hobbyTitle.textContent = 'HOBBIES';
 		hobbyTitle.classList.add('displayHead');
 
-		hobby(hobbySport, sport);
-		hobby(hobbyReading, reading);
-		hobby(hobbySwimming, swimming);
-		hobby(hobbyGames, games);
-		hobby(hobbyTraveling, traveling);
-		hobby(hobbyFriends, friends);	
+		F.hobby(hobbySport, sport);
+		F.hobby(hobbyReading, reading);
+		F.hobby(hobbySwimming, swimming);
+		F.hobby(hobbyGames, games);
+		F.hobby(hobbyTraveling, traveling);
+		F.hobby(hobbyFriends, friends);	
 
 		
 		langTitle.textContent = 'LANGUAGE SPOKEN';	
 		langTitle.classList.add('displayHead');
 
-		languageSpoken(yoruba, langYoruba);
-		languageSpoken(hausa, langHausa);
-		languageSpoken(igbo, langIgbo);
-		languageSpoken(english, langEnglish);
-		languageSpoken(french, langFrench);
-		languageSpoken(german, langGerman);
-		languageSpoken(spanish, langSpanish);
-		languageSpoken(portuguese, langPortugal)
+		F.languageSpoken(yoruba, langYoruba);
+		F.languageSpoken(hausa, langHausa);
+		F.languageSpoken(igbo, langIgbo);
+		F.languageSpoken(english, langEnglish);
+		F.languageSpoken(french, langFrench);
+		F.languageSpoken(german, langGerman);
+		F.languageSpoken(spanish, langSpanish);
+		F.FlanguageSpoken(portuguese, langPortugal)
 
 //Referees Display
 		refHead.textContent = 'REFEREES';
 		refHead.classList.add('displayHead');
 
-		referees(referee1, refName1, addressRef1, refAddress1, phoneRef1, refPhone1, emailRef1, refEmail1);
-		referees(referee2, refName2, addressRef2, refAddress2, phoneRef2, refPhone2, emailRef2, refEmail2);
-		referees(referee3, refName3, addressRef3, refAddress3, phoneRef3, refPhone3, emailRef3, refEmail3);
+		F.referees(referee1, refName1, addressRef1, refAddress1, phoneRef1, refPhone1, emailRef1, refEmail1);
+		F.referees(referee2, refName2, addressRef2, refAddress2, phoneRef2, refPhone2, emailRef2, refEmail2);
+		F.referees(referee3, refName3, addressRef3, refAddress3, phoneRef3, refPhone3, emailRef3, refEmail3);
 
 
 	//window.location.href = "indexCV.html";
@@ -459,7 +459,7 @@ submitBtn.addEventListener('click', (e) => {
 //Countries and State Library
 populateCountries("country", "state");
 
-
+/*
 //Function Definitions
 function education(schDisplay, schAttended, schStart, schEnd) {
 			schDisplay.textContent = schAttended.value + ' ' + '(' + schStart.value + ' ' + 'to' + ' ' + schEnd.value + ').';
@@ -535,4 +535,4 @@ function referees(referee, refName, addressRef, refAddress, phoneRef, refPhone, 
 			addressRef.textContent = refAddress.value;
 			phoneRef.textContent = refPhone.value;
 			emailRef.textContent = refEmail.value;	
-		}			
+		}*/
