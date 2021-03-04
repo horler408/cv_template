@@ -13,12 +13,12 @@ export function eduQualification(qualification, certificate, course, grade, schS
 }
 
 
-export function eduQualification(qualification, certificate, schStart, schEnd) {
-    qualification.textContent = certificate.value + ' ' + '('
-                                + schStart.value + 
-                                ' ' +'to'+ ' ' 
-                                + schEnd.value + ')';	
-}
+// export function eduQualification(qualification, certificate, schStart, schEnd) {
+//     qualification.textContent = certificate.value + ' ' + '('
+//                                 + schStart.value + 
+//                                 ' ' +'to'+ ' ' 
+//                                 + schEnd.value + ')';	
+// }
 
 export function workExperience(work, workExp, role, position, workDates, workStart, workEnd) {
     work.textContent = workExp.value.toUpperCase();
@@ -75,3 +75,16 @@ export function referees(referee, refName, addressRef, refAddress, phoneRef, ref
     emailRef.textContent = refEmail.value;	
 }
 
+export function validation(input, errorMsg) {
+    let valid = false
+    input.addEventListener("blur", () =>{
+        if(input.value === ""){
+            errorMsg.textContent = "This field is required!"
+            valid = false
+        }else {
+            errorMsg.textContent = ""
+            valid = true
+        }
+        return valid
+    })
+}

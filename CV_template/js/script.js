@@ -12,13 +12,14 @@ const footer = document.querySelector('footer');
 const mainHeader = document.querySelector('.main-header');
 const displayContainer = document.querySelector('.display-container');
 const error = document.getElementById('error-message');
+let errorMsg = document.getElementById('errorMsg')
 const addBtn = document.getElementById('add');
 const addExpBtn = document.getElementById('add-exp');
 const expHidden = document.querySelector('.exp');
 const hiddenPost = document.querySelector('.post');
-const work = document.getElementById('work');
-const workBtn = document.getElementById('work-button');
-const input = document.querySelectorAll('input');
+// const work = document.getElementById('work');
+// const workBtn = document.getElementById('work-button');
+// const input = document.querySelectorAll('input');
 const printBtn = document.querySelector('.print');
 const timeStamp = document.getElementById('time-stamp');
 
@@ -288,6 +289,8 @@ addExpBtn.addEventListener('click', () => {
 	}
 })
 
+F.validation(firstName, errorMsg)
+
 //Add Event Listener
 submitBtn.addEventListener('click', (e) => {
 	e.preventDefault();
@@ -380,7 +383,7 @@ submitBtn.addEventListener('click', (e) => {
 		
 		//Primary School Display
 		priHead.textContent = 'Primary Education';
-		education(priSch, primarySch, priStart, priEnd); 
+		F.education(priSch, primarySch, priStart, priEnd); 
 	
 
 		//Educational Qualification
@@ -459,80 +462,3 @@ submitBtn.addEventListener('click', (e) => {
 //Countries and State Library
 populateCountries("country", "state");
 
-/*
-//Function Definitions
-function education(schDisplay, schAttended, schStart, schEnd) {
-			schDisplay.textContent = schAttended.value + ' ' + '(' + schStart.value + ' ' + 'to' + ' ' + schEnd.value + ').';
-		}
-
-
-function eduQualification(qualification, certificate, course, grade, schStart, schEnd) {
-			qualification.textContent =  certificate.value +  ',' + ' '
-										+ course.value + ' ' + '('
-										+ grade.value + ')' + ' ' + '-' + ' ' 
-										+ '(' + schStart.value + ' ' +'to'+ ' ' 
-										+ schEnd.value + ')';			
-		}
-
-
-function eduQualification(qualification, certificate, schStart, schEnd) {
-			qualification.textContent = certificate.value + ' ' + '('
-										+ schStart.value + 
-										' ' +'to'+ ' ' 
-										+ schEnd.value + ')';	
-		}
-
-function workExperience(work, workExp, role, position, workDates, workStart, workEnd) {
-			work.textContent = workExp.value.toUpperCase();
-			role.textContent = position.value;
-			if (workEnd.value === '') {
-				workDates.textContent = workStart.value + ' ' +'-'+ ' ' + 'till date';
-				if (workExp.value === '' || position.value === '' || workStart.value === '') {
-					workDates.style.display = 'none';
-				}
-			}
-			else {
-				workDates.textContent = workStart.value + ' ' +'to'+ ' ' + workEnd.value;
-			}	
-		}
-
-
-function skill_cert(technical, acquired, others, string) {
-			if (acquired.value === '' && others.value === '') {
-				technical.textContent = string;
-		}
-			else {
-				if(others.value !== '') {
-					technical.textContent = acquired.value + ' and ' + others.value;
-					if (acquired.value === '') {
-						technical.textContent = others.value;
-					}
-				}
-				else {
-					technical.textContent = acquired.value;
-					others.style.display = 'none';	
-				}
-			}	
-		}
-
-
-function hobby(hobby, display) {
-			if(hobby.checked) {
-				display.textContent = hobby.value;
-			}
-		}
-
-
-function languageSpoken(language, display) {
-			if(language.checked) {
-				display.textContent = language.value;
-			}
-		}
-
-
-function referees(referee, refName, addressRef, refAddress, phoneRef, refPhone, emailRef, refEmail) {
-			referee.textContent = refName.value;		
-			addressRef.textContent = refAddress.value;
-			phoneRef.textContent = refPhone.value;
-			emailRef.textContent = refEmail.value;	
-		}*/
