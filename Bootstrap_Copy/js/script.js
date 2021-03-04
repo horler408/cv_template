@@ -1,11 +1,3 @@
-/*
-function testPage() {
-	window.onload = prompt('Type your name');
-}
-
-//testPage();
-*/
-
 
 /*Getting DOM Objects from Forms*/
 const footer = document.querySelector('footer');
@@ -442,9 +434,6 @@ submitBtn.addEventListener('click', (e) => {
 		referees(referee2, refName2, addressRef2, refAddress2, phoneRef2, refPhone2, emailRef2, refEmail2);
 		referees(referee3, refName3, addressRef3, refAddress3, phoneRef3, refPhone3, emailRef3, refEmail3);
 
-
-	//window.location.href = "indexCV.html";
-	//window.location.replace("indexCV.html");
 }
 		form.reset();
 });

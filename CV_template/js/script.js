@@ -12,7 +12,6 @@ const footer = document.querySelector('footer');
 const mainHeader = document.querySelector('.main-header');
 const displayContainer = document.querySelector('.display-container');
 const error = document.getElementById('error-message');
-let errorMsg = document.getElementById('errorMsg')
 const addBtn = document.getElementById('add');
 const addExpBtn = document.getElementById('add-exp');
 const expHidden = document.querySelector('.exp');
@@ -135,6 +134,21 @@ const refPhone3 = document.getElementById('referee-phone-3');
 const refEmail1 = document.getElementById('referee-email-1');
 const refEmail2 = document.getElementById('referee-email-2');
 const refEmail3 = document.getElementById('referee-email-3');
+
+//DOM Errors
+const fNameError = document.getElementById('first-name-error');
+const mNameError = document.getElementById('middle-name-error');
+const lNameError = document.getElementById('last-name-error');
+const dobError = document.getElementById('dob-error');
+const pobError = document.getElementById('pob-error');
+const phoneError = document.getElementById('phone-error');
+const emailError = document.getElementById('email-error');
+const objError = document.getElementById('objectives-error');
+const addressError = document.getElementById('address-error');
+const countryError = document.getElementById('country-error');
+const religionError = document.getElementById('religion-error');
+const originError = document.getElementById('origin-error');
+const localError = document.getElementById('local-error');
 
 
 /*Getting DOM Object from UI*/
@@ -286,7 +300,21 @@ addExpBtn.addEventListener('click', () => {
 	}
 })
 
-F.validation(firstName, errorMsg)
+F.validate(firstName, fNameError)
+F.validate(lastName, lNameError)
+F.validate(middleName, mNameError)
+F.validate(phoneNo, phoneError)
+F.validate(email, emailError)
+F.validate(dob, dobError)
+F.validate(pob, pobError)
+F.validate(address, addressError)
+F.validate(careerObj, objError)
+F.validate(local, localError)
+F.validate(faith, religionError)
+F.validate(origin, originError)
+F.validate(country, countryError)
+
+
 
 //Add Event Listener
 submitBtn.addEventListener('click', (e) => {

@@ -1,3 +1,4 @@
+
 //Function Definitions
 export function education(schDisplay, schAttended, schStart, schEnd) {
     schDisplay.textContent = schAttended.value + ' ' + '(' + schStart.value + ' ' + 'to' + ' ' + schEnd.value + ').';
@@ -75,16 +76,17 @@ export function referees(referee, refName, addressRef, refAddress, phoneRef, ref
     emailRef.textContent = refEmail.value;	
 }
 
-export function validation(input, errorMsg) {
+export function validate(input, inputError) {
     let valid = false
     input.addEventListener("blur", () =>{
-        if(input.value === ""){
-            errorMsg.textContent = "This field is required!"
-            valid = false
-        }else {
-            errorMsg.textContent = ""
-            valid = true
-        }
-        return valid
+       if(input.value === ""){
+           inputError.innerHTML = "This field is necessary"
+           valid = false
+       }else {
+            inputError.textContent = ""
+            valid = true  
+       }
     })
+
+    return valid
 }
