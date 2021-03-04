@@ -17,9 +17,6 @@ const addBtn = document.getElementById('add');
 const addExpBtn = document.getElementById('add-exp');
 const expHidden = document.querySelector('.exp');
 const hiddenPost = document.querySelector('.post');
-// const work = document.getElementById('work');
-// const workBtn = document.getElementById('work-button');
-// const input = document.querySelectorAll('input');
 const printBtn = document.querySelector('.print');
 const timeStamp = document.getElementById('time-stamp');
 
@@ -391,8 +388,8 @@ submitBtn.addEventListener('click', (e) => {
 		qualificationHead.classList.add('displayHead');
 
 		//Tertiary Qualification Display
-		F.eduQualification(tert1Qualification, tertiaryCert1, course1, grade1, tert1Start, tert1End);
-		F.eduQualification(tert2Qualification, tertiaryCert2, course2, grade2, tert2Start, tert2End);
+		F.eduQualifications(tert1Qualification, tertiaryCert1, course1, grade1, tert1Start, tert1End);
+		F.eduQualifications(tert2Qualification, tertiaryCert2, course2, grade2, tert2Start, tert2End);
 
 
 		F.eduQualification(secQualification, secCert, secStart, secEnd);

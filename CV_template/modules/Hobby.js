@@ -1,4 +1,4 @@
-import Language from './Languages';
+import Language from './Languages.js';
 const Hobby = () => {
     return `
         <form>

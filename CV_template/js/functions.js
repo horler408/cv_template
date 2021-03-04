@@ -4,7 +4,7 @@ export function education(schDisplay, schAttended, schStart, schEnd) {
 }
 
 
-export function eduQualification(qualification, certificate, course, grade, schStart, schEnd) {
+export function eduQualifications(qualification, certificate, course, grade, schStart, schEnd) {
     qualification.textContent =  certificate.value +  ',' + ' '
                                 + course.value + ' ' + '('
                                 + grade.value + ')' + ' ' + '-' + ' ' 
@@ -13,12 +13,12 @@ export function eduQualification(qualification, certificate, course, grade, schS
 }
 
 
-// export function eduQualification(qualification, certificate, schStart, schEnd) {
-//     qualification.textContent = certificate.value + ' ' + '('
-//                                 + schStart.value + 
-//                                 ' ' +'to'+ ' ' 
-//                                 + schEnd.value + ')';	
-// }
+export function eduQualification(qualification, certificate, schStart, schEnd) {
+    qualification.textContent = certificate.value + ' ' + '('
+                                + schStart.value + 
+                                ' ' +'to'+ ' ' 
+                                + schEnd.value + ')';	
+}
 
 export function workExperience(work, workExp, role, position, workDates, workStart, workEnd) {
     work.textContent = workExp.value.toUpperCase();

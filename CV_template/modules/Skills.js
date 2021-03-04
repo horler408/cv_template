@@ -1,4 +1,4 @@
-import Certification from './Certifications'
+import Certification from './Certifications.js'
 const Skills = () => {
     return `
         <form>
